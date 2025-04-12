@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.game-table {
+    display: grid;
+    grid-template-columns: repeat(7, 50px);
+    grid-gap: 5px;
+    background-color: #d3d3d3;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #000; /* Add a 1px border */
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+}
+
+.cell.red {
+    background-color: red;
+}
+
+.cell.green {
+    background-color: green;
+}
+
+.state-result {
+    margin-top: 10px; /* Space between the button and the result */
+    padding: 10px;
+    width: 500px;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    display: none; /* Initially hidden */
+    text-align: center; /* Center the text */
+    line-height: 50px; /* Vertically center the text */
+}
