@@ -1,2 +1,2 @@
-# Debud mode, True to enable debug mode
+# Debug mode, True to enable debug mode
 DEBUG = True

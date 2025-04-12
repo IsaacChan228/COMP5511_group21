@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, jsonify
 from debug import DEBUG
+import logging
+import os
 
 # create Flask environment
 app = Flask(__name__)
-
 
 ##### Constants #####
 
