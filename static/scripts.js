@@ -26,6 +26,8 @@ function updateGameBoard() {
                 cell.classList.add('green');
             }
         });
+        // Update the "Next Move" cell
+        updateNextMoveCell(nextMoveValue);
     })
     .catch(error => {
         console.error('Error updating game board:', error);
@@ -108,3 +110,35 @@ document.getElementById('reset-board-button').addEventListener('click', () => {
     });
 });
 
+// When "Next Move" cell is clicked, send a request to the backend
+document.getElementById('next-move-cell').addEventListener('click', () => {
+    fetch('/nextmove-click', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.message); // Log the response from the backend
+        updateNextMoveCell();
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+// Function to update the color of the "Next Move" cell
+function updateNextMoveCell(value) {
+    const nextMoveCell = document.getElementById('next-move-cell');
+
+    // Reset the cell's class
+    nextMoveCell.className = 'next-move-cell';
+
+    // Apply the appropriate class based on the value
+    if (value === 1) {
+        nextMoveCell.classList.add('red'); // Red for player 1
+    } else if (value === 2) {
+        nextMoveCell.classList.add('green'); // Green for player 2
+    }
+}

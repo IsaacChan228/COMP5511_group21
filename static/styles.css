@@ -36,7 +36,7 @@ body {
 .button-group {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Space between buttons */
+    gap: 10px; 
 }
 
 button {
@@ -78,4 +78,33 @@ button {
     display: none; /* Initially hidden */
     text-align: center; /* Center the text */
     line-height: 50px; /* Vertically center the text */
+}
+
+.next-move-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.next-move-text {
+    display: inline-block;
+    margin-right: 10px; /* Add space between text and cell */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.next-move-cell {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background-color: white; /* Default color */
+}
+
+.next-move-cell.red {
+    background-color: red;
+}
+
+.next-move-cell.green {
+    background-color: green;
 }

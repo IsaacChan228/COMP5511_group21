@@ -15,12 +15,15 @@ board_cols = 7
 # Initialize the game board
 game_board = [[0 for _ in range(board_cols)] for _ in range(board_rows)]
 
+# Initialize the next-move cell
+next_move_cell = 1
 
 ##### Routes for the main pages #####
 
 @app.route('/')
 def index():
-    return render_template('index.html', game_board=game_board, enumerate=enumerate)
+    return render_template('index.html', game_board=game_board,
+                            next_move_cell=next_move_cell, enumerate=enumerate)
 
 @app.route('/update', methods=['POST'])
 
@@ -72,6 +75,12 @@ def reset_gameboard_click():
     if DEBUG: print("Game board has been reset.")
     return jsonify({'message': 'Game board has been reset.'})
 
+@app.route('/nextmove-click', methods=['POST'])
+def nextmove_click():
+    if DEBUG: print("Next Move cell clicked")
+    result=handle_next_move_click()
+    return jsonify({'message': result})
+
 
 ##### Handler functions #####
 
@@ -116,11 +125,28 @@ def handle_state_verify():
     return 1
 
 def reset_gameboard():
+    # This function resets the game board to its initial state
     global game_board
     # Reset the game board to its initial state (all zeros)
     game_board = [[0 for _ in range(board_cols)] for _ in range(board_rows)]
 
     return 0
+
+def handle_next_move_click():
+    # This function handles the next move cell click event
+    global next_move_cell
+
+    # Update the next move cell value
+    if next_move_cell == 0:
+        next_move_cell = 1
+    elif next_move_cell == 1:
+        next_move_cell = 2
+    elif next_move_cell == 2:
+        next_move_cell = 1
+
+    if DEBUG: print(f"Next move cell updated to {next_move_cell}")
+
+    return "Success"
 
 
 if __name__ == '__main__':

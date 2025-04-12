@@ -23,6 +23,11 @@
                 {% endfor %}
             </div>
             <div class="button-group">
+                <div class="next-move-container">
+                    <p id="next-move-text" class="next-move-text}">Next Move:</p>
+                    <div id="next-move-cell" class="next-move-cell
+                        {% if next_move_cell == 1 %}red{% elif next_move_cell == 2 %}green{% endif %}"></div>
+                </div>
                 <button id="verify-state-button">Verify State</button>
                 <button id="clear-message-button">Clear Message</button>
                 <button id="reset-board-button">Reset Game Board</button>
