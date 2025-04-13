@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request, jsonify
 from debug import DEBUG
-import logging
-import os
+import handler
 
 # create Flask environment
 app = Flask(__name__)
 
-##### Constants #####
+
+# Constants
 
 # Constants for the game board dimensions
 board_rows = 6
@@ -16,52 +16,66 @@ board_cols = 7
 game_board = [[0 for _ in range(board_cols)] for _ in range(board_rows)]
 
 # Initialize the next-move cell
-next_move_cell = 1
+next_move = 1
 
-##### Routes for the main pages #####
+
+# Routes for the GUI pages
 
 @app.route('/')
 def index():
     return render_template('index.html', game_board=game_board,
-                            next_move_cell=next_move_cell, enumerate=enumerate)
+                            next_move=next_move, enumerate=enumerate)
 
+
+# This function would update the GUI game board with the values from the game_board array
 @app.route('/update', methods=['POST'])
+def update():
+    return jsonify({'game_board': game_board, 'next_move': next_move})
 
 
-##### Gui Action Functions #####
-
-def gameboard_update():
-    # This function would update the GUI game board with the values from the game_board array
-    global game_board
-    if DEBUG: print("Game board updated.")
-
-    return jsonify({'game_board': game_board})
-
+# This function handles the cell click event from the GUI
 @app.route('/cell-click', methods=['POST'])
 def cell_click():
-    # This function handles the cell click event from the GUI
     data = request.get_json()
     row = data.get('row')
     col = data.get('col')
 
     if DEBUG: print(f"Cell clicked at row: {row}, column: {col}")
 
-    # Call handler function with row and col as parameters
-    result = handle_cell_click(row, col)
+    # Call handler function
+    result = handler.handle_cell_click(row, col, game_board)
+    if DEBUG: print(f"Cell click result: {result}")
 
     return jsonify({'message': f'Cell at row {row}, column {col} processed.', 'result': result})
 
+
+# This function handles the invert state event from the GUI
+@app.route('/invert-state', methods=['POST'])
+def invert_state():
+    global game_board
+    handler.invert_game_board(game_board)  # Call the handler function to invert the board
+    if DEBUG: print("Game board state inverted.")
+    return jsonify({'message': 'Game board state inverted.'})
+
+
+## This function handles the vertify state event from the GUI
 @app.route('/verify-state', methods=['POST'])
 def state_verify_click():
     if DEBUG: print("Verifying game state")
     
     # Call handler function
-    result = handle_state_verify()
+    result = handler.handle_state_verify(game_board, next_move)
 
     if result == 1: message = "Game state is valid"
     elif result == 2: message = "Invalid game state: Red has made more moves than Green"
     elif result == 3: message = "Invalid game state: Green has made more moves than Red"
-    elif result == 4: message = "Invalid game state: Floating cell detected"
+    elif result == 4: message = "Invalid game state: Red's turn but Red has made the last move"
+    elif result == 5: message = "Invalid game state: Green's turn but Green has made the last move"
+    elif result == 6: message = "Invalid game state: Floating cell detected"
+    elif result == 7: message = "Invalid game state: both side has winned"
+    elif result == 8: message = "game state: Red wins"
+    elif result == 9: message = "game state: Green wins"
+
     else: message = "Unknown error"
 
     if DEBUG: print(f"Game state verification result: {message}")
@@ -69,84 +83,26 @@ def state_verify_click():
     # Return the result to the frontend
     return jsonify({'message': message})
 
+
+## This function handles the reset game board event from the GUI
 @app.route('/reset-board', methods=['POST'])
 def reset_gameboard_click():
-    reset_gameboard()
-    if DEBUG: print("Game board has been reset.")
+    result=handler.reset_gameboard(game_board)
+    if DEBUG: print("Game board reset result:", result)
+
+    # Return the result to the frontend   
     return jsonify({'message': 'Game board has been reset.'})
 
+
+## This function handles the next move cell click event from the GUI
 @app.route('/nextmove-click', methods=['POST'])
 def nextmove_click():
+    global next_move
     if DEBUG: print("Next Move cell clicked")
-    result=handle_next_move_click()
-    return jsonify({'message': result})
+    next_move = handler.handle_next_move_click(next_move)
 
-
-##### Handler functions #####
-
-def handle_cell_click(row, col):
-    # This is a handler function that processes the cell click
-    global game_board
-    row = int(row)
-    col = int(col)
-
-    # Update the value based on the rules
-    if game_board[row][col] == 0:
-        game_board[row][col] = 1
-    elif game_board[row][col] == 1:
-        game_board[row][col] = 2
-    elif game_board[row][col] == 2:
-        game_board[row][col] = 0
-
-    if DEBUG: print(f"Updated game_board[{row}][{col}] to {game_board[row][col]}")
-    gameboard_update()
-
-    return "Success"
-
-def handle_state_verify():
-    # This is a handler function that vertifies the game state
-    global game_board
-
-    # Check if the cell if any side has made extra moves (2 more than the other)
-    count_1 = sum(row.count(1) for row in game_board)
-    count_2 = sum(row.count(2) for row in game_board)
-    if count_1 - count_2 > 1:
-        return 2
-    elif count_2 - count_1 > 1:
-        return 3
-
-    # Check if any cell is floating (1 or 2) without a cell below it
-    for row in range(board_rows - 1):
-        for col in range(board_cols):
-            if game_board[row][col] != 0 and game_board[row + 1][col] == 0:
-                return 4
-
-    # Noraml state
-    return 1
-
-def reset_gameboard():
-    # This function resets the game board to its initial state
-    global game_board
-    # Reset the game board to its initial state (all zeros)
-    game_board = [[0 for _ in range(board_cols)] for _ in range(board_rows)]
-
-    return 0
-
-def handle_next_move_click():
-    # This function handles the next move cell click event
-    global next_move_cell
-
-    # Update the next move cell value
-    if next_move_cell == 0:
-        next_move_cell = 1
-    elif next_move_cell == 1:
-        next_move_cell = 2
-    elif next_move_cell == 2:
-        next_move_cell = 1
-
-    if DEBUG: print(f"Next move cell updated to {next_move_cell}")
-
-    return "Success"
+    # Return the result to the frontend  
+    return jsonify({'message': 'Next move updated.', 'next_move': next_move})
 
 
 if __name__ == '__main__':

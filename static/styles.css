@@ -93,7 +93,7 @@ button {
     font-weight: bold;
 }
 
-.next-move-cell {
+.next-move {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -101,10 +101,10 @@ button {
     background-color: white; /* Default color */
 }
 
-.next-move-cell.red {
+.next-move.red {
     background-color: red;
 }
 
-.next-move-cell.green {
+.next-move.green {
     background-color: green;
 }

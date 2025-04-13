@@ -8,31 +8,22 @@ function updateGameBoard() {
     })
     .then(response => response.json())
     .then(data => {
+        console.log(data.message); // Log the response from the backend
+
         const gameBoard = data.game_board;
+        const nextMove = data.next_move;
 
         // Update the cells based on the new game board values
-        document.querySelectorAll('.cell').forEach(cell => {
-            const row = parseInt(cell.getAttribute('data-row'));
-            const col = parseInt(cell.getAttribute('data-col'));
-            const value = gameBoard[row][col];
+        updateGameBoardCells(gameBoard);
 
-            // Reset the cell's class
-            cell.className = 'cell';
-
-            // Apply the appropriate class based on the value
-            if (value === 1) {
-                cell.classList.add('red');
-            } else if (value === 2) {
-                cell.classList.add('green');
-            }
-        });
         // Update the "Next Move" cell
-        updateNextMoveCell(nextMoveValue);
+        updateNextMove(nextMove);
     })
     .catch(error => {
         console.error('Error updating game board:', error);
     });
 }
+
 
 // When game board cell is clicked, send the updated state of the game board to the backend
 document.querySelectorAll('.cell').forEach(cell => {
@@ -59,6 +50,27 @@ document.querySelectorAll('.cell').forEach(cell => {
     });
 });
 
+
+// When "Invert State" button is clicked, send a request to verify the current game state
+document.getElementById('invert-state-button').addEventListener('click', () => {
+    fetch('/invert-state', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.message); // Log the response from the backend
+
+        updateGameBoard(); // Refresh the game board on the frontend
+    })
+    .catch(error => {
+        console.error('Error inverting state:', error);
+    });
+});
+
+
 // When "Verify State" button is clicked, send a request to verify the current game state
 document.getElementById('verify-state-button').addEventListener('click', () => {
     fetch('/verify-state', {
@@ -69,6 +81,8 @@ document.getElementById('verify-state-button').addEventListener('click', () => {
     })
     .then(response => response.json())
     .then(data => {
+        console.log(data.message); // Log the response from the backend
+
         // Display the result in the state-result div
         const resultDiv = document.getElementById('state-result');
         resultDiv.textContent = data.message; // Set the result message
@@ -79,12 +93,14 @@ document.getElementById('verify-state-button').addEventListener('click', () => {
     });
 });
 
+
 // When "Clear Message" button is clicked, hide the state-result message
 document.getElementById('clear-message-button').addEventListener('click', () => {
     const resultDiv = document.getElementById('state-result');
     resultDiv.style.display = 'none'; // Hide the state-result div
     resultDiv.textContent = ''; // Clear the message content
 });
+
 
 // When "Reset Game Board" button is clicked, send a request to reset the game board
 document.getElementById('reset-board-button').addEventListener('click', () => {
@@ -97,6 +113,7 @@ document.getElementById('reset-board-button').addEventListener('click', () => {
     .then(response => response.json())
     .then(data => {
         console.log(data.message); // Log the response from the backend
+
         updateGameBoard(); // Refresh the game board on the frontend
 
         // Hide the state-result message
@@ -110,8 +127,9 @@ document.getElementById('reset-board-button').addEventListener('click', () => {
     });
 });
 
+
 // When "Next Move" cell is clicked, send a request to the backend
-document.getElementById('next-move-cell').addEventListener('click', () => {
+document.getElementById('next-move').addEventListener('click', () => {
     fetch('/nextmove-click', {
         method: 'POST',
         headers: {
@@ -121,24 +139,50 @@ document.getElementById('next-move-cell').addEventListener('click', () => {
     .then(response => response.json())
     .then(data => {
         console.log(data.message); // Log the response from the backend
-        updateNextMoveCell();
+
+        updateNextMove(data.next_move); // Pass the updated value from the backend
     })
     .catch(error => {
         console.error('Error:', error);
     });
 });
 
+
 // Function to update the color of the "Next Move" cell
-function updateNextMoveCell(value) {
-    const nextMoveCell = document.getElementById('next-move-cell');
+function updateNextMove(value) {
+    const nextMove = document.getElementById('next-move');
 
     // Reset the cell's class
-    nextMoveCell.className = 'next-move-cell';
+    nextMove.className = 'next-move';
 
     // Apply the appropriate class based on the value
     if (value === 1) {
-        nextMoveCell.classList.add('red'); // Red for player 1
+        nextMove.classList.add('red'); // Red for player 1
     } else if (value === 2) {
-        nextMoveCell.classList.add('green'); // Green for player 2
+        nextMove.classList.add('green'); // Green for player 2
+    }
+     else {
+        console.warn('Invalid next_move value:', value);
     }
 }
+
+
+// Function to update the color of the cells of the game board
+function updateGameBoardCells(gameBoard) {
+    document.querySelectorAll('.cell').forEach(cell => {
+        const row = parseInt(cell.getAttribute('data-row'));
+        const col = parseInt(cell.getAttribute('data-col'));
+        const value = gameBoard[row][col];
+
+        // Reset the cell's class
+        cell.className = 'cell';
+
+        // Apply the appropriate class based on the value
+        if (value === 1) {
+            cell.classList.add('red'); // Red for player 1
+        } else if (value === 2) {
+            cell.classList.add('green'); // Green for player 2
+        }
+    });
+}
+
