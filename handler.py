@@ -1,7 +1,7 @@
 from flask import jsonify
 from debug import DEBUG_1
 import minimax
-import csv
+import json
 
 
 # This function updates the game board and returns the updated game board
@@ -102,20 +102,21 @@ def handle_next_move_click(next_move):
     return next_move
 
 
+# This function handles the minimax calculation and exports the minimax tree to a JSON file
 def handle_minimax(game_board, next_move):
     # Set the depth for minimax calculation
-    depth = 5  
+    depth = 3  
+
+    # Dictionary to store the minimax tree
+    minimax_tree = {}
 
     # Calculate the minimax scores for each column
-    scores = minimax.minimax_move(game_board, next_move, depth)
+    scores = minimax.minimax_move(game_board, next_move, depth, minimax_tree)
 
-    # Export the minimax tree to a CSV file
-    with open('minimax_tree.csv', 'w', newline='') as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerow(['Column', 'Score'])
-        for col, score in enumerate(scores):
-            writer.writerow([col, score])
+    # Export the minimax tree to a JSON file
+    with open('minimax_tree.json', 'w') as jsonfile:
+        json.dump(minimax_tree, jsonfile, indent=4)
 
-    if DEBUG_1: print(f"Minimax tree exported to minimax_tree.csv")
+    if DEBUG_1: print(f"Minimax tree exported to minimax_tree.json")
 
     return scores

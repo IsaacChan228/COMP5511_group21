@@ -12,7 +12,7 @@ def check_win(game_board, side):
             if game_board[row][col] == side:
                 count += 1
                 if count == 4:  # Found 4 in a row
-                    print(f"Player {side} wins vertically in column {col}")
+                    if DEBUG_2: print(f"Player {side} wins vertically in column {col}")
                     return True
             else:
                 count = 0  # Reset count if the streak is broken
@@ -24,7 +24,7 @@ def check_win(game_board, side):
             if game_board[row][col] == side:
                 count += 1
                 if count == 4:  # Found 4 in a row
-                    print(f"Player {side} wins horizontally in row {row}")
+                    if DEBUG_2: print(f"Player {side} wins horizontally in row {row}")
                     return True
             else:
                 count = 0  # Reset count if the streak is broken
@@ -36,7 +36,7 @@ def check_win(game_board, side):
                 game_board[row + 1][col + 1] == side and
                 game_board[row + 2][col + 2] == side and
                 game_board[row + 3][col + 3] == side):
-                print(f"Player {side} wins diagonally (\\) starting at row {row}, col {col}")
+                if DEBUG_2: print(f"Player {side} wins diagonally (\\) starting at row {row}, col {col}")
                 return True
 
     # Check for 4 in a row in any diagonal (bottom-left to top-right)
@@ -46,7 +46,7 @@ def check_win(game_board, side):
                 game_board[row - 1][col + 1] == side and
                 game_board[row - 2][col + 2] == side and
                 game_board[row - 3][col + 3] == side):
-                print(f"Player {side} wins diagonally (/) starting at row {row}, col {col}")
+                if DEBUG_2: print(f"Player {side} wins diagonally (/) starting at row {row}, col {col}")
                 return True
 
     return False
@@ -188,33 +188,28 @@ def window_calculation(window, side):
 
 
 # This function perform minimax algorithm to find the score for placing piece at each column
-def minimax_move(game_board, side, depth):
+def minimax_move(game_board, side, depth, minimax_tree):
     cols = len(game_board[0])
 
     # Determine the opponent's side
     opponent = 1 if side == 2 else 2  
 
     # Initialize scores for each column
-    # Use a sufficiently large negative number
     scores = [-999999] * cols  
 
     # Calculate the score for each column
     for col in range(cols):
-        # Check if the column is available to place a piece
-        # If the column is full, assign a very low score to indicate it's not a good move
         if not column_avail(game_board, col):
             scores[col] = -999990
             continue
 
-        # Simulate placing a piece in this column
         next_board = clone_and_place_piece(game_board, side, col)
 
-        alpha = -1000000  # Use a sufficiently large negative number for alpha
-        beta = 1000000    # Use a sufficiently large positive number for beta
+        alpha = -1000000
+        beta = 1000000
 
         # Calculate the score for placing in this column using minimax with alpha-beta pruning
-        # As maximizing player has already placed a piece, start with minimizing player's turn
-        scores[col] = minimax(next_board, depth - 1, alpha, beta, False, side, opponent)
+        scores[col] = minimax(next_board, depth - 1, alpha, beta, False, side, opponent, minimax_tree, 0, col)
 
     return scores
 
@@ -238,61 +233,81 @@ def clone_and_place_piece(board, side, column):
     for row in reversed(range(len(board))):  # Start from the bottom row
         if new_board[row][column] == 0:
             new_board[row][column] = side
-            
+
             if DEBUG_2: print(f"Placed piece for side {side} in column {column}, row {row}")
             break
     return new_board
 
 
 # This function calculates the score for a given game board using minimax algorithm with alpha-beta pruning
-def minimax(board, depth, alpha, beta, maximizing_player, side, opponent):
+def minimax(board, depth, alpha, beta, maximizing_player, side, opponent, minimax_tree, current_depth=0, current_col=None):
     valid_columns = columns_avail(board)
     is_terminal = check_win(board, side) or check_win(board, opponent) or len(valid_columns) == 0
+
+    # Generate the key for the current node
+    current_key = f"depth_{current_depth}_col_{current_col}" if current_col is not None else f"depth_{current_depth}"
+
+    # Initialize the current node in the tree if not already present
+    if current_key not in minimax_tree:
+        minimax_tree[current_key] = {"score": None, "children": {}}
 
     # Base case: terminal state or depth reached
     if depth == 0 or is_terminal:
         if is_terminal:
-            if check_win(board, side): # Maximizing player wins
-                return 99999  
-            elif check_win(board, opponent): # Opponent wins
-                return -99999  
-            else: # Draw
-                return 0  
+            if check_win(board, side):  # Maximizing player wins
+                score = 99999
+            elif check_win(board, opponent):  # Opponent wins
+                score = -99999
+            else:  # Draw
+                score = 0
         else:
-            eval_score = evaluation(board, side)
-            if DEBUG_2: print(f"Evaluation score at depth {depth}: {eval_score}")
-            return eval_score
+            score = evaluation(board, side)
 
-    # if the next move is maximizing player's turn
-    if maximizing_player: 
-        # Start with a sufficiently large negative number
-        max_eval = -999000 
+        # Store the score in the tree
+        minimax_tree[current_key]["score"] = score
+        return score
 
+    if maximizing_player:
+        max_eval = -999000
         for col in valid_columns:
-            # Simulate placing a piece in this column
             next_board = clone_and_place_piece(board, side, col)
+            subtree_key = f"depth_{current_depth + 1}_col_{col}"
 
-            # Perform minimizing player's turn
-            eval = minimax(next_board, depth - 1, alpha, beta, False, side, opponent)
+            # Ensure the subtree is initialized
+            if subtree_key not in minimax_tree[current_key]["children"]:
+                minimax_tree[current_key]["children"][subtree_key] = {"score": None, "children": {}}
+
+            eval = minimax(next_board, depth - 1, alpha, beta, False, side, opponent, minimax_tree[current_key]["children"], current_depth + 1, col)
             max_eval = max(max_eval, eval)
             alpha = max(alpha, eval)
             if beta <= alpha:
+                # Mark pruned nodes with "x"
+                for remaining_col in valid_columns[valid_columns.index(col) + 1:]:
+                    pruned_key = f"depth_{current_depth + 1}_col_{remaining_col}"
+                    minimax_tree[current_key]["children"][pruned_key] = {"score": "x", "children": {}}
                 break
+
+        minimax_tree[current_key]["score"] = max_eval
         return max_eval
-    
-    # if the next move is minimizing player's turn
-    else: 
-        # Start with a sufficiently large positive number
+    else:
         min_eval = 999000
-
         for col in valid_columns:
-            # Simulate placing a piece in this column
             next_board = clone_and_place_piece(board, opponent, col)
+            subtree_key = f"depth_{current_depth + 1}_col_{col}"
 
-            # Perform maximizing player's turn
-            eval = minimax(next_board, depth - 1, alpha, beta, True, side, opponent)
+            # Ensure the subtree is initialized
+            if subtree_key not in minimax_tree[current_key]["children"]:
+                minimax_tree[current_key]["children"][subtree_key] = {"score": None, "children": {}}
+
+            eval = minimax(next_board, depth - 1, alpha, beta, True, side, opponent, minimax_tree[current_key]["children"], current_depth + 1, col)
             min_eval = min(min_eval, eval)
             beta = min(beta, eval)
             if beta <= alpha:
+                # Mark pruned nodes with "x"
+                for remaining_col in valid_columns[valid_columns.index(col) + 1:]:
+                    pruned_key = f"depth_{current_depth + 1}_col_{remaining_col}"
+                    minimax_tree[current_key]["children"][pruned_key] = {"score": "x", "children": {}}
                 break
+
+        minimax_tree[current_key]["score"] = min_eval
         return min_eval
