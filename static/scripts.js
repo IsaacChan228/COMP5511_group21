@@ -186,3 +186,31 @@ function updateGameBoardCells(gameBoard) {
     });
 }
 
+// When "Minimax" button is clicked, calculate the score for each column
+document.getElementById('minimax-button').addEventListener('click', () => {
+    fetch('/minimax', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.message); // Log the response from the backend
+        console.log('Minimax scores:', data.scores); // Log the scores
+
+        // Display the result in the minimax-result div
+        const resultDiv = document.getElementById('minimax-result');
+        if (data.scores.length === 0) {
+            // If scores are empty, display the error message
+            resultDiv.textContent = data.message;
+        } else {
+            // Otherwise, display the scores
+            resultDiv.textContent = `Scores for each column: ${data.scores.join(', ')}`;
+        }
+        resultDiv.style.display = 'block'; // Ensure the div is visible
+    })
+    .catch(error => {
+        console.error('Error calculating minimax:', error);
+    });
+});

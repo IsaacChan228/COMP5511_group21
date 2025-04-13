@@ -1,10 +1,12 @@
 from flask import jsonify
-from debug import DEBUG
+from debug import DEBUG_1
 import minimax
+import csv
+
 
 # This function updates the game board and returns the updated game board
 def gameboard_update(game_board):
-    if DEBUG: print("Game board updated.")
+    if DEBUG_1: print("Game board updated.")
     return jsonify({'game_board': game_board})
 
 
@@ -21,7 +23,7 @@ def handle_cell_click(row, col, game_board):
     elif game_board[row][col] == 2:
         game_board[row][col] = 0
 
-    if DEBUG: print(f"Updated game_board[{row}][{col}] to {game_board[row][col]}")
+    if DEBUG_1: print(f"Updated game_board[{row}][{col}] to {game_board[row][col]}")
     gameboard_update(game_board)
 
     return "Success"
@@ -38,7 +40,7 @@ def invert_game_board(game_board):
         for col in range(len(game_board[0])):
             if game_board[row][col] == 3:
                 game_board[row][col] = 2
-    if DEBUG: print("Inverted game board:", game_board)
+    if DEBUG_1: print("Inverted game board:", game_board)
 
 
 # This is a handler function that vertifies the game state
@@ -95,6 +97,25 @@ def handle_next_move_click(next_move):
     elif next_move == 2:
         next_move = 1
 
-    if DEBUG: print(f"Next move cell updated to {next_move}")
+    if DEBUG_1: print(f"Next move cell updated to {next_move}")
 
     return next_move
+
+
+def handle_minimax(game_board, next_move):
+    # Set the depth for minimax calculation
+    depth = 5  
+
+    # Calculate the minimax scores for each column
+    scores = minimax.minimax_move(game_board, next_move, depth)
+
+    # Export the minimax tree to a CSV file
+    with open('minimax_tree.csv', 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['Column', 'Score'])
+        for col, score in enumerate(scores):
+            writer.writerow([col, score])
+
+    if DEBUG_1: print(f"Minimax tree exported to minimax_tree.csv")
+
+    return scores
