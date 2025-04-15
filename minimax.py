@@ -1,4 +1,5 @@
 from debug import DEBUG_2
+import weight
 
 # This function checks if a player has won the game
 def check_win(game_board, side):
@@ -56,27 +57,52 @@ def check_win(game_board, side):
 def evaluation(game_board, side):
     score = 0
 
+    # Center column is more valuable as it allows more winning combinations
     # Add weight for occupying center column
     score += center_weight(game_board, side)
 
-    # Add score if the player is close to winning
-    # Also reduce score if opponent is close to winning to encourage blocking
-    # Add score for horizontal, vertical, and diagonal weights
-    horizontal_score = horizontal_weight(game_board, side)
-    vertical_score = vertical_weight(game_board, side)
-    diagonal_l_score = diagonal_weight_l(game_board, side)
-    diagonal_r_score = diagonal_weight_r(game_board, side)
+    h_array = horizontal_weight(game_board, side)
+    v_array = vertical_weight(game_board, side)
+    d_l_array = diagonal_weight_l(game_board, side)
+    d_r_array = diagonal_weight_r(game_board, side)
 
     if DEBUG_2:
-        print(f"Horizontal weight for side {side}: {horizontal_score}")
-        print(f"Vertical weight for side {side}: {vertical_score}")
-        print(f"Diagonal (\\) weight for side {side}: {diagonal_l_score}")
-        print(f"Diagonal (/) weight for side {side}: {diagonal_r_score}")
+        print(f"Horizontal progress for side {side}: {h_array}")
+        print(f"Vertical progress for side {side}: {v_array}")
+        print(f"Diagonal (\\) progress for side {side}: {d_l_array}")
+        print(f"Diagonal (/) progress for side {side}: {d_r_array}")
 
-    score += horizontal_score
-    score += vertical_score
-    score += diagonal_l_score
-    score += diagonal_r_score
+
+    # Initialize total array to store total counts of 4-piece, 3-piece, etc.
+    total_array = [0, 0, 0, 0]
+
+    # Add counts from horizontal, vertical, and diagonal weights
+    total_array = add_arrays(total_array, h_array)
+    total_array = add_arrays(total_array, v_array)
+    total_array = add_arrays(total_array, d_l_array)
+    total_array = add_arrays(total_array, d_r_array)
+
+    # Calculate score based on the total array
+    # 4-piece: Winning move
+    score += total_array[0] * weight.winning_move_4p
+    # 3-piece: 1 move away from winning
+    score += total_array[1] * weight.winning_move_3p
+    # 2-piece: 2 moves away from winning
+    score += total_array[2] * weight.winning_move_2p
+    # 3 opponent piece: 1 move away from losing
+    score += total_array[3] * weight.losing_move_3p
+
+    # if the move can achieve multiple winning combinations,
+    # provide a bonus score
+    # No bonus score if opponent achieve 
+    # multiple winning combinations, as it means losing
+    if total_array[0] > 1: score += weight.m_winning_move_4p
+    if total_array[1] > 1: score += weight.m_winning_move_3p
+    if total_array[2] > 1: score += weight.m_winning_move_2p
+
+    if DEBUG_2:
+        print(f"Score for side {side}: {score}")
+        print(f"Total array: {total_array}")
 
     return score
 
@@ -93,98 +119,117 @@ def center_weight(game_board, side):
     for row in range(rows):
         # Check center most column
         if game_board[row][center_col] == side:
-            weight += 3
+            weight += weight.center_col_merit
 
         # Check adjacent columns
         elif center_col - 1 >= 0 and game_board[row][center_col - 1] == side:
-            weight += 2
+            weight += weight.adj_col_merit
         elif center_col + 1 < cols and game_board[row][center_col + 1] == side:
-            weight += 2
+            weight += weight.adj_col_merit
+
     return weight
 
 
-# This function calculate weight to horizonal winning move 
+# This function adds two arrays element-wise
+def add_arrays(arr1, arr2):
+    return [arr1[i] + arr2[i] for i in range(len(arr1))]
+
+
+# This function calculates how close the player is to winning
+# in the horizontal direction
 def horizontal_weight(game_board, side):
-    weight = 0
     rows = len(game_board)
     cols = len(game_board[0])
+    total_array = [0, 0, 0, 0]
 
     for row in range(rows):
         # minus 3 to ensure the calculation is within the board limits
         for col in range(cols - 3):
             window = [game_board[row][col + i] for i in range(4)]
-            weight += window_calculation(window, side)
+            total_array = add_arrays(total_array, window_calculation(window, side))
 
-    return weight
+    return total_array
 
 
-# This function calculate weight to vertical winning move
+# This function calculates how close the player is to winning
+# in the vertical direction
 def vertical_weight(game_board, side):
-    weight = 0
     rows = len(game_board)
     cols = len(game_board[0])
+    total_array = [0, 0, 0, 0]
 
     for col in range(cols):
         # minus 3 to ensure the calculation is within the board limits
         for row in range(rows - 3):
             window = [game_board[row + i][col] for i in range(4)]
-            weight += window_calculation(window, side)
+            total_array = add_arrays(total_array, window_calculation(window, side))
 
-    return weight
+    return total_array
 
 
-# This function calculate weight to diagonal winning move (top-left to bottom-right)
+# This function calculates how close the player is to winning
+# in the diagonal direction (top-left to bottom-right)
 def diagonal_weight_l(game_board, side):
-    weight = 0
     rows = len(game_board)
     cols = len(game_board[0])
+    total_array = [0, 0, 0, 0]
 
+    # minus 3 to ensure the calculation is within the board limits
     for row in range(rows - 3):
         for col in range(cols - 3):
             window = [game_board[row + i][col + i] for i in range(4)]
-            weight += window_calculation(window, side)
+            total_array = add_arrays(total_array, window_calculation(window, side))
 
-    return weight
+    return total_array
 
 
-# This function calculate weight to diagonal winning move (bottom-left to top-right)
+# This function calculates how close the player is to winning
+# in the diagonal direction (bottom-left to top-right)
 def diagonal_weight_r(game_board, side):
-    weight = 0
     rows = len(game_board)
     cols = len(game_board[0])
+    total_array = [0, 0, 0, 0]
 
+    # minus 3 to ensure the calculation is within the board limits
     for row in range(3, rows):
         for col in range(cols - 3):
             window = [game_board[row - i][col + i] for i in range(4)]
-            weight += window_calculation(window, side)
+            total_array = add_arrays(total_array, window_calculation(window, side))
 
-    return weight
+    return total_array
 
 
 # This function add weight according to how close the window is to winning
-# Closer to winning, higher the score
-# Also reduce weight if opponent is 1 move away from winning
+# A window is a sub-section of the game board of 4 adjacent cells
 def window_calculation(window, side):
     opponent = 1 if side == 2 else 2
-    score = 0
 
+    # Count player piece, opponent piece, and empty spaces in the window
     player_pieces = window.count(side)
     opponent_pieces = window.count(opponent)
-
-    # Count empty spaces in the window
     empty_spaces = window.count(0)
 
-    if player_pieces == 4: # Winning move
-        score += 10000  
-    elif player_pieces == 3 and empty_spaces == 1: # 1 move away from winning
-        score += 100  
-    elif player_pieces == 2 and empty_spaces == 2: # 2 move away from winning
-        score += 10  
+    # Initialize the array to store the number of match cases
+    # [4-piece, 3-piece, 2-piece, opponent 3-piece]
+    result = [0, 0, 0, 0]  
 
-    if opponent_pieces == 3 and empty_spaces == 1: # Block opponent's winning move
-        score -= 1000
+    # 4 piece in a row: Winning move
+    if player_pieces == 4: 
+        result[0] += 1
 
-    return score
+    # 3 piece in a row & 1 empty cell: 1 move away from winning
+    elif player_pieces == 3 and empty_spaces == 1:
+        result[1] += 1
+        
+    # 2 piece in a row & 2 empty cell: 2 move away from winning
+    elif player_pieces == 2 and empty_spaces == 2: 
+        result[2] += 1
+
+    # 3 oppenent piece in a row & 1 empty cell: 1 move away from losing
+    elif opponent_pieces == 3 and empty_spaces == 1: 
+        result[3] += 1
+
+    return result
 
 
 # This function perform minimax algorithm to find the score for placing piece at each column
