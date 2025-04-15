@@ -21,5 +21,18 @@ Things to be done:
 3. Add the function that check the winning moves/ winning state
 4. Add the function that evaluate the score of each move
     - give a very high score to winning moves
-    - give a very high penalty if opponent next move will win the game
+    - give a very high penalty if opponent next move will win the game, etc.
 5. Add and customize the MinimaxTree to the code, with debug function to display the min/max values for report
+
+
+13 Apr update by Isaac:
+- evaluator version with html GUI and flask handler is created
+- minimax tree implemented
+- may need tuning on the weight of each state, but can do it later
+- minimax tree is exported to minimax_tree.JSON
+
+- How to run the code
+    1. pip install -r requirement.txt
+    2. python connect4.py
+    3. a flask utility should be running at (http://127.0.0.1:5000)
+    4. remember to ctrl+C to stop the utility when done

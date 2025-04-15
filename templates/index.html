@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Four Game Evaluator</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Connect Four Game Evaluator</h1><br>
+        <div class="game-area">
+            <div class="game-table">
+                {% for row_idx, row in enumerate(game_board) %}
+                    {% for col_idx, cell in enumerate(row) %}
+                        <div class="cell 
+                                    {% if cell == 1 %}red{% elif cell == 2 %}green{% endif %}" 
+                             data-row="{{ row_idx }}" 
+                             data-col="{{ col_idx }}" 
+                             data-value="{{ cell }}">
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+            <div class="button-group">
+                <div class="next-move-container">
+                    <p id="next-move-text" class="next-move-text}">Next Move:</p>
+                    <div id="next-move" class="next-move
+                        {% if next_move == 1 %}red{% elif next_move == 2 %}green{% endif %}"></div>
+                </div>
+                <button id="invert-state-button">Invert State</button>
+                <button id="verify-state-button">Verify State</button>
+                <button id="minimax-button">Calculate move</button>
+                <button id="clear-message-button">Clear Message</button>
+                <button id="reset-board-button">Reset Game Board</button>
+            </div>
+        </div>
+        <div id="state-result" class="state-result"></div>
+        <div id="minimax-result" class="state-result"></div>
+    </div>
+
+    <script src="/static/scripts.js"></script>
+</body>
+</html>
