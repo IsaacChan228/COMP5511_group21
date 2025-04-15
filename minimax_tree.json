@@ -1,355 +1,74 @@
 {
-    "depth_0_col_0": {
-        "score": 14,
-        "children": {
-            "depth_1_col_0": {
-                "score": 126,
-                "children": {
-                    "depth_2_col_0": {
-                        "score": 14,
-                        "children": {}
-                    },
-                    "depth_2_col_1": {
-                        "score": 24,
-                        "children": {}
-                    },
-                    "depth_2_col_2": {
-                        "score": 126,
-                        "children": {}
-                    },
-                    "depth_2_col_3": {
-                        "score": 45,
-                        "children": {}
-                    },
-                    "depth_2_col_4": {
-                        "score": 34,
-                        "children": {}
-                    },
-                    "depth_2_col_5": {
-                        "score": 14,
-                        "children": {}
-                    },
-                    "depth_2_col_6": {
-                        "score": 14,
-                        "children": {}
-                    }
-                }
-            },
-            "depth_1_col_1": {
-                "score": 126,
-                "children": {
-                    "depth_2_col_0": {
-                        "score": 34,
-                        "children": {}
-                    },
-                    "depth_2_col_1": {
-                        "score": 44,
-                        "children": {}
-                    },
-                    "depth_2_col_2": {
-                        "score": 126,
-                        "children": {}
-                    },
-                    "depth_2_col_3": {
-                        "score": "x",
-                        "children": {}
-                    },
-                    "depth_2_col_4": {
-                        "score": "x",
-                        "children": {}
-                    },
-                    "depth_2_col_5": {
-                        "score": "x",
-                        "children": {}
-                    },
-                    "depth_2_col_6": {
-                        "score": "x",
-                        "children": {}
-                    }
-                }
-            },
-            "depth_1_col_2": {
-                "score": 45,
-                "children": {
-                    "depth_2_col_0": {
-                        "score": 24,
-                        "children": {}
-                    },
-                    "depth_2_col_1": {
-                        "score": 14,
-                        "children": {}
-                    },
-                    "depth_2_col_2": {
-                        "score": 6,
-                        "children": {}
-                    },
-                    "depth_2_col_3": {
-                        "score": 45,
-                        "children": {}
-                    },
-                    "depth_2_col_4": {
-                        "score": 24,
-                        "children": {}
-                    },
-                    "depth_2_col_5": {
-                        "score": 4,
-                        "children": {}
-                    },
-                    "depth_2_col_6": {
-                        "score": 4,
-                        "children": {}
-                    }
-                }
-            },
-            "depth_1_col_3": {
-                "score": 126,
-                "children": {
-                    "depth_2_col_0": {
-                        "score": 24,
-                        "children": {}
-                    },
-                    "depth_2_col_1": {
-                        "score": 24,
-                        "children": {}
-                    },
-                    "depth_2_col_2": {
-                        "score": 126,
-                        "children": {}
-                    },
-                    "depth_2_col_3": {
-                        "score": "x",
-                        "children": {}
-                    },
-                    "depth_2_col_4": {
-                        "score": "x",
-                        "children": {}
-                    },
-                    "depth_2_col_5": {
-                        "score": "x",
-                        "children": {}
-                    },
-                    "depth_2_col_6": {
-                        "score": "x",
-                        "children": {}
-                    }
-                }
-            },
-            "depth_1_col_4": {
-                "score": 126,
-                "children": {
-                    "depth_2_col_0": {
-                        "score": 34,
-                        "children": {}
-                    },
-                    "depth_2_col_1": {
-                        "score": 24,
-                        "children": {}
-                    },
-                    "depth_2_col_2": {
-                        "score": 126,
-                        "children": {}
-                    },
-                    "depth_2_col_3": {
-                        "score": "x",
-                        "children": {}
-                    },
-                    "depth_2_col_4": {
-                        "score": "x",
-                        "children": {}
-                    },
-                    "depth_2_col_5": {
-                        "score": "x",
-                        "children": {}
-                    },
-                    "depth_2_col_6": {
-                        "score": "x",
-                        "children": {}
-                    }
-                }
-            },
-            "depth_1_col_5": {
-                "score": 14,
-                "children": {
-                    "depth_2_col_0": {
-                        "score": -966,
-                        "children": {}
-                    },
-                    "depth_2_col_1": {
-                        "score": -976,
-                        "children": {}
-                    },
-                    "depth_2_col_2": {
-                        "score": -874,
-                        "children": {}
-                    },
-                    "depth_2_col_3": {
-                        "score": -945,
-                        "children": {}
-                    },
-                    "depth_2_col_4": {
-                        "score": -966,
-                        "children": {}
-                    },
-                    "depth_2_col_5": {
-                        "score": -976,
-                        "children": {}
-                    },
-                    "depth_2_col_6": {
-                        "score": 14,
-                        "children": {}
-                    }
-                }
-            },
-            "depth_1_col_6": {
-                "score": 14,
-                "children": {
-                    "depth_2_col_0": {
-                        "score": -966,
-                        "children": {}
-                    },
-                    "depth_2_col_1": {
-                        "score": -976,
-                        "children": {}
-                    },
-                    "depth_2_col_2": {
-                        "score": -874,
-                        "children": {}
-                    },
-                    "depth_2_col_3": {
-                        "score": -945,
-                        "children": {}
-                    },
-                    "depth_2_col_4": {
-                        "score": -966,
-                        "children": {}
-                    },
-                    "depth_2_col_5": {
-                        "score": 14,
-                        "children": {}
-                    },
-                    "depth_2_col_6": {
-                        "score": "x",
-                        "children": {}
-                    }
-                }
-            }
-        }
-    },
     "depth_0_col_1": {
-        "score": 24,
+        "score": 310010,
         "children": {
-            "depth_1_col_0": {
-                "score": 126,
-                "children": {
-                    "depth_2_col_0": {
-                        "score": 34,
-                        "children": {}
-                    },
-                    "depth_2_col_1": {
-                        "score": 54,
-                        "children": {}
-                    },
-                    "depth_2_col_2": {
-                        "score": 126,
-                        "children": {}
-                    },
-                    "depth_2_col_3": {
-                        "score": 65,
-                        "children": {}
-                    },
-                    "depth_2_col_4": {
-                        "score": 44,
-                        "children": {}
-                    },
-                    "depth_2_col_5": {
-                        "score": 24,
-                        "children": {}
-                    },
-                    "depth_2_col_6": {
-                        "score": 24,
-                        "children": {}
-                    }
-                }
-            },
             "depth_1_col_1": {
-                "score": 126,
+                "score": 310010,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 24,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 24,
+                        "score": 210005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 126,
+                        "score": 310010,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": "x",
+                        "score": 210010,
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": "x",
+                        "score": 210005,
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": "x",
+                        "score": 210005,
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": "x",
+                        "score": 100005,
                         "children": {}
                     }
                 }
             },
             "depth_1_col_2": {
-                "score": 55,
+                "score": 610005,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 14,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 44,
+                        "score": 610005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 16,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": 55,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": 34,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": 14,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": 14,
+                        "score": "x",
                         "children": {}
                     }
                 }
             },
             "depth_1_col_3": {
-                "score": 126,
+                "score": 610005,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 24,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 34,
+                        "score": 610005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 126,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_3": {
@@ -371,18 +90,14 @@
                 }
             },
             "depth_1_col_4": {
-                "score": 126,
+                "score": 610005,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 24,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 44,
+                        "score": 610005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 126,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_3": {
@@ -404,63 +119,55 @@
                 }
             },
             "depth_1_col_5": {
-                "score": 24,
+                "score": 610005,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": -976,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": -946,
+                        "score": 610005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": -874,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": -935,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": -956,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": -966,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": 24,
+                        "score": "x",
                         "children": {}
                     }
                 }
             },
             "depth_1_col_6": {
-                "score": 24,
+                "score": 610005,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": -976,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": -946,
+                        "score": 610005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": -874,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": -935,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": -956,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": 24,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_6": {
@@ -472,116 +179,71 @@
         }
     },
     "depth_0_col_2": {
-        "score": 57,
+        "score": 310010,
         "children": {
-            "depth_1_col_0": {
-                "score": 99999,
-                "children": {
-                    "depth_2_col_0": {
-                        "score": 126,
-                        "children": {}
-                    },
-                    "depth_2_col_1": {
-                        "score": 126,
-                        "children": {}
-                    },
-                    "depth_2_col_2": {
-                        "score": 99999,
-                        "children": {}
-                    },
-                    "depth_2_col_3": {
-                        "score": 167,
-                        "children": {}
-                    },
-                    "depth_2_col_4": {
-                        "score": 136,
-                        "children": {}
-                    },
-                    "depth_2_col_5": {
-                        "score": 116,
-                        "children": {}
-                    },
-                    "depth_2_col_6": {
-                        "score": 116,
-                        "children": {}
-                    }
-                }
-            },
             "depth_1_col_1": {
-                "score": 99999,
+                "score": 410015,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 126,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 156,
+                        "score": 310010,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 99999,
+                        "score": 410015,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": "x",
+                        "score": 210015,
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": "x",
+                        "score": 310010,
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": "x",
+                        "score": 210010,
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": "x",
+                        "score": 100010,
                         "children": {}
                     }
                 }
             },
             "depth_1_col_2": {
-                "score": 57,
+                "score": 310010,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 16,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 16,
+                        "score": 310010,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 8,
+                        "score": 100015,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": 57,
+                        "score": 210015,
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": 26,
+                        "score": 310010,
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": 6,
+                        "score": 210010,
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": 6,
+                        "score": 100010,
                         "children": {}
                     }
                 }
             },
             "depth_1_col_3": {
-                "score": 126,
+                "score": 410010,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 126,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": "x",
+                        "score": 410010,
                         "children": {}
                     },
                     "depth_2_col_2": {
@@ -607,14 +269,10 @@
                 }
             },
             "depth_1_col_4": {
-                "score": 126,
+                "score": 410010,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 126,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": "x",
+                        "score": 410010,
                         "children": {}
                     },
                     "depth_2_col_2": {
@@ -640,18 +298,14 @@
                 }
             },
             "depth_1_col_5": {
-                "score": 99999,
+                "score": 410010,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": -874,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": -874,
+                        "score": 410010,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 99999,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_3": {
@@ -673,18 +327,14 @@
                 }
             },
             "depth_1_col_6": {
-                "score": 99999,
+                "score": 410010,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": -874,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": -874,
+                        "score": 410010,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 99999,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_3": {
@@ -708,128 +358,83 @@
         }
     },
     "depth_0_col_3": {
-        "score": 55,
+        "score": 210020,
         "children": {
-            "depth_1_col_0": {
-                "score": 245,
-                "children": {
-                    "depth_2_col_0": {
-                        "score": 145,
-                        "children": {}
-                    },
-                    "depth_2_col_1": {
-                        "score": 65,
-                        "children": {}
-                    },
-                    "depth_2_col_2": {
-                        "score": 167,
-                        "children": {}
-                    },
-                    "depth_2_col_3": {
-                        "score": 88,
-                        "children": {}
-                    },
-                    "depth_2_col_4": {
-                        "score": 245,
-                        "children": {}
-                    },
-                    "depth_2_col_5": {
-                        "score": 55,
-                        "children": {}
-                    },
-                    "depth_2_col_6": {
-                        "score": 55,
-                        "children": {}
-                    }
-                }
-            },
             "depth_1_col_1": {
-                "score": 245,
+                "score": 400010,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 55,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 235,
+                        "score": 210010,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 167,
+                        "score": 210015,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": 78,
+                        "score": 310020,
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": 245,
+                        "score": 400010,
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": "x",
+                        "score": 400010,
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": "x",
+                        "score": 210010,
                         "children": {}
                     }
                 }
             },
             "depth_1_col_2": {
-                "score": 235,
+                "score": 410015,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 45,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 55,
+                        "score": 310010,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 47,
+                        "score": 410015,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": 78,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": 235,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": 45,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": 45,
+                        "score": "x",
                         "children": {}
                     }
                 }
             },
             "depth_1_col_3": {
-                "score": 245,
+                "score": 400010,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 55,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 55,
+                        "score": 310010,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 167,
+                        "score": 210015,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": 58,
+                        "score": 210020,
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": 245,
+                        "score": 400010,
                         "children": {}
                     },
                     "depth_2_col_5": {
@@ -843,96 +448,84 @@
                 }
             },
             "depth_1_col_4": {
-                "score": 147,
+                "score": 210020,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 35,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 45,
+                        "score": 210010,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 147,
+                        "score": 100015,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": 68,
+                        "score": 210020,
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": 137,
+                        "score": 100015,
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": 35,
+                        "score": 10,
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": 35,
+                        "score": 10,
                         "children": {}
                     }
                 }
             },
             "depth_1_col_5": {
-                "score": 55,
+                "score": 210020,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": -945,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": -935,
+                        "score": 210010,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": -833,
+                        "score": 100015,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": -912,
+                        "score": 210020,
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": -755,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": -845,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": 55,
+                        "score": "x",
                         "children": {}
                     }
                 }
             },
             "depth_1_col_6": {
-                "score": 55,
+                "score": 310010,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": -945,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": -935,
+                        "score": 310010,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": -833,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": -912,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": -755,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": 55,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_6": {
@@ -944,153 +537,104 @@
         }
     },
     "depth_0_col_4": {
-        "score": 34,
+        "score": 210010,
         "children": {
-            "depth_1_col_0": {
-                "score": 245,
-                "children": {
-                    "depth_2_col_0": {
-                        "score": 44,
-                        "children": {}
-                    },
-                    "depth_2_col_1": {
-                        "score": 44,
-                        "children": {}
-                    },
-                    "depth_2_col_2": {
-                        "score": 136,
-                        "children": {}
-                    },
-                    "depth_2_col_3": {
-                        "score": 245,
-                        "children": {}
-                    },
-                    "depth_2_col_4": {
-                        "score": 56,
-                        "children": {}
-                    },
-                    "depth_2_col_5": {
-                        "score": 44,
-                        "children": {}
-                    },
-                    "depth_2_col_6": {
-                        "score": 34,
-                        "children": {}
-                    }
-                }
-            },
             "depth_1_col_1": {
-                "score": 245,
+                "score": 400010,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 34,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 134,
+                        "score": 310005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 136,
+                        "score": 310010,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": 245,
+                        "score": 400010,
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": "x",
+                        "score": 210010,
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": "x",
+                        "score": 400005,
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": "x",
+                        "score": 210005,
                         "children": {}
                     }
                 }
             },
             "depth_1_col_2": {
-                "score": 235,
+                "score": 410010,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 24,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 34,
+                        "score": 310005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 46,
+                        "score": 410010,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": 235,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": 46,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": 34,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": 24,
+                        "score": "x",
                         "children": {}
                     }
                 }
             },
             "depth_1_col_3": {
-                "score": 116,
+                "score": 210015,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 14,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 24,
+                        "score": 210005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 116,
+                        "score": 210010,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": 57,
+                        "score": 210015,
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": 26,
+                        "score": 100010,
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": 24,
+                        "score": 5,
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": 14,
+                        "score": 5,
                         "children": {}
                     }
                 }
             },
             "depth_1_col_4": {
-                "score": 136,
+                "score": 310005,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 34,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 44,
+                        "score": 310005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 136,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_3": {
@@ -1112,63 +656,55 @@
                 }
             },
             "depth_1_col_5": {
-                "score": 34,
+                "score": 210010,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": -966,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": -956,
+                        "score": 210005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": -864,
+                        "score": 210010,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": -755,
+                        "score": 10,
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": -944,
+                        "score": 100010,
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": -866,
+                        "score": 5,
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": 34,
+                        "score": 5,
                         "children": {}
                     }
                 }
             },
             "depth_1_col_6": {
-                "score": 44,
+                "score": 310005,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": -966,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": -956,
+                        "score": 310005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": -864,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": -755,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": -944,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": 44,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_6": {
@@ -1180,153 +716,104 @@
         }
     },
     "depth_0_col_5": {
-        "score": 45,
+        "score": 210005,
         "children": {
-            "depth_1_col_0": {
-                "score": 116,
-                "children": {
-                    "depth_2_col_0": {
-                        "score": 24,
-                        "children": {}
-                    },
-                    "depth_2_col_1": {
-                        "score": 24,
-                        "children": {}
-                    },
-                    "depth_2_col_2": {
-                        "score": 116,
-                        "children": {}
-                    },
-                    "depth_2_col_3": {
-                        "score": 55,
-                        "children": {}
-                    },
-                    "depth_2_col_4": {
-                        "score": 44,
-                        "children": {}
-                    },
-                    "depth_2_col_5": {
-                        "score": 34,
-                        "children": {}
-                    },
-                    "depth_2_col_6": {
-                        "score": 14,
-                        "children": {}
-                    }
-                }
-            },
             "depth_1_col_1": {
-                "score": 116,
+                "score": 400010,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 14,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 34,
+                        "score": 210005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 116,
+                        "score": 210010,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": "x",
+                        "score": 400010,
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": "x",
+                        "score": 400005,
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": "x",
+                        "score": 210005,
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": "x",
+                        "score": 210005,
                         "children": {}
                     }
                 }
             },
             "depth_1_col_2": {
-                "score": 45,
+                "score": 510010,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 4,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 14,
+                        "score": 310005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 16,
+                        "score": 510010,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": 45,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": 34,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": 24,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": 4,
+                        "score": "x",
                         "children": {}
                     }
                 }
             },
             "depth_1_col_3": {
-                "score": 116,
+                "score": 210005,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 14,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 24,
+                        "score": 210005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 116,
+                        "score": 100010,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": "x",
+                        "score": 100015,
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": "x",
+                        "score": 5,
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": "x",
+                        "score": 100005,
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": "x",
+                        "score": 5,
                         "children": {}
                     }
                 }
             },
             "depth_1_col_4": {
-                "score": 116,
+                "score": 210005,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 14,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 24,
+                        "score": 210005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 116,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_3": {
@@ -1348,18 +835,14 @@
                 }
             },
             "depth_1_col_5": {
-                "score": 116,
+                "score": 310005,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 14,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 24,
+                        "score": 310005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 116,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_3": {
@@ -1381,18 +864,14 @@
                 }
             },
             "depth_1_col_6": {
-                "score": 116,
+                "score": 310005,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 14,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 24,
+                        "score": 310005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 116,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_3": {
@@ -1416,153 +895,104 @@
         }
     },
     "depth_0_col_6": {
-        "score": 45,
+        "score": 210005,
         "children": {
-            "depth_1_col_0": {
-                "score": 116,
-                "children": {
-                    "depth_2_col_0": {
-                        "score": 24,
-                        "children": {}
-                    },
-                    "depth_2_col_1": {
-                        "score": 24,
-                        "children": {}
-                    },
-                    "depth_2_col_2": {
-                        "score": 116,
-                        "children": {}
-                    },
-                    "depth_2_col_3": {
-                        "score": 55,
-                        "children": {}
-                    },
-                    "depth_2_col_4": {
-                        "score": 34,
-                        "children": {}
-                    },
-                    "depth_2_col_5": {
-                        "score": 14,
-                        "children": {}
-                    },
-                    "depth_2_col_6": {
-                        "score": 24,
-                        "children": {}
-                    }
-                }
-            },
             "depth_1_col_1": {
-                "score": 116,
+                "score": 210010,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 14,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 34,
+                        "score": 100005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 116,
+                        "score": 100010,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": "x",
+                        "score": 210010,
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": "x",
+                        "score": 210005,
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": "x",
+                        "score": 210005,
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": "x",
+                        "score": 100005,
                         "children": {}
                     }
                 }
             },
             "depth_1_col_2": {
-                "score": 45,
+                "score": 310010,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 4,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 14,
+                        "score": 210005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 6,
+                        "score": 310010,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": 45,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": 24,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": 4,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": 14,
+                        "score": "x",
                         "children": {}
                     }
                 }
             },
             "depth_1_col_3": {
-                "score": 116,
+                "score": 210005,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 14,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 24,
+                        "score": 210005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 116,
+                        "score": 100010,
                         "children": {}
                     },
                     "depth_2_col_3": {
-                        "score": "x",
+                        "score": 100015,
                         "children": {}
                     },
                     "depth_2_col_4": {
-                        "score": "x",
+                        "score": 5,
                         "children": {}
                     },
                     "depth_2_col_5": {
-                        "score": "x",
+                        "score": 5,
                         "children": {}
                     },
                     "depth_2_col_6": {
-                        "score": "x",
+                        "score": 100005,
                         "children": {}
                     }
                 }
             },
             "depth_1_col_4": {
-                "score": 116,
+                "score": 210005,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 14,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 24,
+                        "score": 210005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 116,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_3": {
@@ -1584,18 +1014,14 @@
                 }
             },
             "depth_1_col_5": {
-                "score": 116,
+                "score": 210005,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 14,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 24,
+                        "score": 210005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 116,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_3": {
@@ -1617,18 +1043,14 @@
                 }
             },
             "depth_1_col_6": {
-                "score": 116,
+                "score": 210005,
                 "children": {
-                    "depth_2_col_0": {
-                        "score": 14,
-                        "children": {}
-                    },
                     "depth_2_col_1": {
-                        "score": 24,
+                        "score": 210005,
                         "children": {}
                     },
                     "depth_2_col_2": {
-                        "score": 116,
+                        "score": "x",
                         "children": {}
                     },
                     "depth_2_col_3": {

@@ -85,8 +85,11 @@ document.getElementById('verify-state-button').addEventListener('click', () => {
 
         // Display the result in the state-result div
         const resultDiv = document.getElementById('state-result');
+        const minimaxDiv = document.getElementById('minimax-result');
+
         resultDiv.textContent = data.message; // Set the result message
         resultDiv.style.display = 'block'; // Ensure the div is visible
+        minimaxDiv.style.display = 'none'; // Hide the minimax-result div
     })
     .catch(error => {
         console.error('Error verifying state:', error);
@@ -94,11 +97,16 @@ document.getElementById('verify-state-button').addEventListener('click', () => {
 });
 
 
-// When "Clear Message" button is clicked, hide the state-result message
+// When "Clear Message" button is clicked, clear both state-result and minimax-result messages
 document.getElementById('clear-message-button').addEventListener('click', () => {
-    const resultDiv = document.getElementById('state-result');
-    resultDiv.style.display = 'none'; // Hide the state-result div
-    resultDiv.textContent = ''; // Clear the message content
+    const stateResultDiv = document.getElementById('state-result');
+    const minimaxResultDiv = document.getElementById('minimax-result');
+
+    // Hide both divs and clear their content
+    stateResultDiv.style.display = 'none';
+    stateResultDiv.textContent = '';
+    minimaxResultDiv.style.display = 'none';
+    minimaxResultDiv.textContent = '';
 });
 
 
@@ -116,11 +124,14 @@ document.getElementById('reset-board-button').addEventListener('click', () => {
 
         updateGameBoard(); // Refresh the game board on the frontend
 
-        // Hide the state-result message
-        const resultDiv = document.getElementById('state-result');
-        resultDiv.style.display = 'none'; // Hide the state-result div
-        resultDiv.textContent = ''; // Clear the message content
+        // Hide both state-result and minimax-result divs
+        const stateResultDiv = document.getElementById('state-result');
+        const minimaxResultDiv = document.getElementById('minimax-result');
 
+        stateResultDiv.style.display = 'none';
+        stateResultDiv.textContent = '';
+        minimaxResultDiv.style.display = 'none';
+        minimaxResultDiv.textContent = '';
     })
     .catch(error => {
         console.error('Error resetting game board:', error);
@@ -186,6 +197,7 @@ function updateGameBoardCells(gameBoard) {
     });
 }
 
+
 // When "Minimax" button is clicked, calculate the score for each column
 document.getElementById('minimax-button').addEventListener('click', () => {
     fetch('/minimax', {
@@ -201,6 +213,8 @@ document.getElementById('minimax-button').addEventListener('click', () => {
 
         // Display the result in the minimax-result div
         const resultDiv = document.getElementById('minimax-result');
+        const stateDiv = document.getElementById('state-result');
+
         if (data.scores.length === 0) {
             // If scores are empty, display the error message
             resultDiv.textContent = data.message;
@@ -209,6 +223,7 @@ document.getElementById('minimax-button').addEventListener('click', () => {
             resultDiv.textContent = `Scores for each column: ${data.scores.join(', ')}`;
         }
         resultDiv.style.display = 'block'; // Ensure the div is visible
+        stateDiv.style.display = 'none'; // Hide the state-result div
     })
     .catch(error => {
         console.error('Error calculating minimax:', error);

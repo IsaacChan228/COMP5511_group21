@@ -39,5 +39,5 @@ m_winning_move_4p = 800000
 m_winning_move_3p = 500000
 
 # 2 or more 2-piece: 2 moves away from winning
-# Multiple 2-piece-in-a-row, decent progress
-m_winning_move_2p = 200000
+# Multiple 2-piece-in-a-row, still important
+m_winning_move_2p = 10000

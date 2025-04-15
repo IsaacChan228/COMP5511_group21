@@ -1,5 +1,6 @@
 from debug import DEBUG_2
 import weight
+import math
 
 # This function checks if a player has won the game
 def check_win(game_board, side):
@@ -58,8 +59,8 @@ def evaluation(game_board, side):
     score = 0
 
     # Center column is more valuable as it allows more winning combinations
-    # Add weight for occupying center column
-    score += center_weight(game_board, side)
+    # Add score for occupying center column
+    score += center_score(game_board, side)
 
     h_array = horizontal_weight(game_board, side)
     v_array = vertical_weight(game_board, side)
@@ -73,7 +74,7 @@ def evaluation(game_board, side):
         print(f"Diagonal (/) progress for side {side}: {d_r_array}")
 
 
-    # Initialize total array to store total counts of 4-piece, 3-piece, etc.
+    # Initialize total array to store total counts of 3-piece, 2-piece, etc.
     total_array = [0, 0, 0, 0]
 
     # Add counts from horizontal, vertical, and diagonal weights
@@ -103,31 +104,32 @@ def evaluation(game_board, side):
     if DEBUG_2:
         print(f"Score for side {side}: {score}")
         print(f"Total array: {total_array}")
+        print(f"game_board: {game_board}")
 
     return score
 
 
 # Center column is more valuable as it allows more winning combinations
-# This function add weight to center column and adjacent columns
-def center_weight(game_board, side):
+# This function add score to center column and adjacent columns
+def center_score(game_board, side):
     rows = len(game_board)
     cols = len(game_board[0])
-    weight = 0
+    score = 0
 
     center_col = cols // 2
 
     for row in range(rows):
         # Check center most column
         if game_board[row][center_col] == side:
-            weight += weight.center_col_merit
+            score += weight.center_col_merit
 
         # Check adjacent columns
         elif center_col - 1 >= 0 and game_board[row][center_col - 1] == side:
-            weight += weight.adj_col_merit
+            score += weight.adj_col_merit
         elif center_col + 1 < cols and game_board[row][center_col + 1] == side:
-            weight += weight.adj_col_merit
+            score += weight.adj_col_merit
 
-    return weight
+    return score
 
 
 # This function adds two arrays element-wise
@@ -240,18 +242,19 @@ def minimax_move(game_board, side, depth, minimax_tree):
     opponent = 1 if side == 2 else 2  
 
     # Initialize scores for each column
-    scores = [-999999] * cols  
+    scores = [-math.inf] * cols  
 
     # Calculate the score for each column
     for col in range(cols):
         if not column_avail(game_board, col):
-            scores[col] = -999990
+            # Column is not available
+            scores[col] = "NA"  
             continue
 
         next_board = clone_and_place_piece(game_board, side, col)
 
-        alpha = -1000000
-        beta = 1000000
+        alpha = -math.inf
+        beta = math.inf
 
         # Calculate the score for placing in this column using minimax with alpha-beta pruning
         scores[col] = minimax(next_board, depth - 1, alpha, beta, False, side, opponent, minimax_tree, 0, col)
@@ -269,25 +272,33 @@ def column_avail(game_board, column):
 def columns_avail(game_board):
     cols = len(game_board[0])
     valid_columns = [col for col in range(cols) if column_avail(game_board, col)]
+
+    if DEBUG_2: print(f"Valid columns: {valid_columns}")
+
     return valid_columns
 
 
 # This function simulates placing a piece in the game board at a specific column
 def clone_and_place_piece(board, side, column):
     new_board = [row[:] for row in board]  # Deep copy of the board
+
     for row in reversed(range(len(board))):  # Start from the bottom row
         if new_board[row][column] == 0:
             new_board[row][column] = side
-
             if DEBUG_2: print(f"Placed piece for side {side} in column {column}, row {row}")
-            break
+            return new_board
+        
+    if DEBUG_2: print(f"Column {column} is full, cannot place piece for side {side}")
+
     return new_board
 
 
-# This function calculates the score for a given game board using minimax algorithm with alpha-beta pruning
 def minimax(board, depth, alpha, beta, maximizing_player, side, opponent, minimax_tree, current_depth=0, current_col=None):
     valid_columns = columns_avail(board)
     is_terminal = check_win(board, side) or check_win(board, opponent) or len(valid_columns) == 0
+
+    if DEBUG_2:
+        print(f"Depth: {depth}, Valid Columns: {valid_columns}, Current Column: {current_col}")
 
     # Generate the key for the current node
     current_key = f"depth_{current_depth}_col_{current_col}" if current_col is not None else f"depth_{current_depth}"
@@ -300,9 +311,9 @@ def minimax(board, depth, alpha, beta, maximizing_player, side, opponent, minima
     if depth == 0 or is_terminal:
         if is_terminal:
             if check_win(board, side):  # Maximizing player wins
-                score = 99999
+                score = math.inf
             elif check_win(board, opponent):  # Opponent wins
-                score = -99999
+                score = -math.inf
             else:  # Draw
                 score = 0
         else:
@@ -313,7 +324,8 @@ def minimax(board, depth, alpha, beta, maximizing_player, side, opponent, minima
         return score
 
     if maximizing_player:
-        max_eval = -999000
+        max_eval = -math.inf
+
         for col in valid_columns:
             next_board = clone_and_place_piece(board, side, col)
             subtree_key = f"depth_{current_depth + 1}_col_{col}"
@@ -323,10 +335,19 @@ def minimax(board, depth, alpha, beta, maximizing_player, side, opponent, minima
                 minimax_tree[current_key]["children"][subtree_key] = {"score": None, "children": {}}
 
             eval = minimax(next_board, depth - 1, alpha, beta, False, side, opponent, minimax_tree[current_key]["children"], current_depth + 1, col)
+
+            if DEBUG_2: print(f"Evaluating column {col}, depth {current_depth}, score {eval}, max_score {max_eval}, alpha {alpha}, beta {beta}")
+
             max_eval = max(max_eval, eval)
             alpha = max(alpha, eval)
+
+            # Record the score of the node that triggered pruning
+            minimax_tree[current_key]["children"][subtree_key]["score"] = eval
+
             if beta <= alpha:
-                # Mark pruned nodes with "x"
+                if DEBUG_2: print(f"Pruning at column {col}, depth {current_depth}")
+
+                # Mark remaining nodes as "x"
                 for remaining_col in valid_columns[valid_columns.index(col) + 1:]:
                     pruned_key = f"depth_{current_depth + 1}_col_{remaining_col}"
                     minimax_tree[current_key]["children"][pruned_key] = {"score": "x", "children": {}}
@@ -335,7 +356,8 @@ def minimax(board, depth, alpha, beta, maximizing_player, side, opponent, minima
         minimax_tree[current_key]["score"] = max_eval
         return max_eval
     else:
-        min_eval = 999000
+        min_eval = math.inf
+
         for col in valid_columns:
             next_board = clone_and_place_piece(board, opponent, col)
             subtree_key = f"depth_{current_depth + 1}_col_{col}"
@@ -345,10 +367,19 @@ def minimax(board, depth, alpha, beta, maximizing_player, side, opponent, minima
                 minimax_tree[current_key]["children"][subtree_key] = {"score": None, "children": {}}
 
             eval = minimax(next_board, depth - 1, alpha, beta, True, side, opponent, minimax_tree[current_key]["children"], current_depth + 1, col)
+            
+            if DEBUG_2: print(f"Evaluating column {col}, depth {current_depth}, score {eval}, min_score {min_eval}, alpha {alpha}, beta {beta}")
+            
             min_eval = min(min_eval, eval)
             beta = min(beta, eval)
+
+            # Record the score of the node that triggered pruning
+            minimax_tree[current_key]["children"][subtree_key]["score"] = eval
+
             if beta <= alpha:
-                # Mark pruned nodes with "x"
+                if DEBUG_2: print(f"Pruning at column {col}, depth {current_depth}")
+
+                # Mark remaining nodes as "x"
                 for remaining_col in valid_columns[valid_columns.index(col) + 1:]:
                     pruned_key = f"depth_{current_depth + 1}_col_{remaining_col}"
                     minimax_tree[current_key]["children"][pruned_key] = {"score": "x", "children": {}}
