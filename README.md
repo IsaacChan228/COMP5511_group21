@@ -31,7 +31,8 @@ Things to be done:
 - may need tuning on the weight of each state, but can do it later
 - minimax tree is exported to minimax_tree.JSON
 
-- How to run the code
+
+How to run the code:
     1. pip install -r requirement.txt
     2. python connect4.py
     3. a flask utility should be running at (http://127.0.0.1:5000)
