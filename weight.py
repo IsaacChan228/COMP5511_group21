@@ -25,7 +25,7 @@ winning_move_2p = 50
 
 # 3 opponent piece: 1 move away from losing
 # Second highest priority, prevents losing
-losing_move_3p = 5500
+losing_move_3p = -3000
 
 
 ### multiple winning pattern bonus ###
