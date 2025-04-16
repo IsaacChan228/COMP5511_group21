@@ -4,7 +4,7 @@ Members:
 CHAN Lok Hay (24014193G)
 TAI Siu Po (24012802G)
 Lok Him Rhine WOO (24022778G)
-Ming Sum YAU
+Ming Sum YAU (24120919G)
 
 
 Scope to be discussed:
