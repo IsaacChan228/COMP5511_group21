@@ -2,7 +2,7 @@
 
 Members: 
 CHAN Lok Hay (24014193G)
-Siu Po TAI
+TAI Siu Po (24012802G)
 Lok Him Rhine WOO (24022778G)
 Ming Sum YAU
 
