@@ -106,7 +106,7 @@ def handle_next_move_click(next_move):
 # This function handles the minimax calculation and exports the minimax tree to a JSON file
 def handle_minimax(game_board, next_move):
     # Set the depth for minimax calculation
-    depth = 5
+    depth = 3
 
     # Dictionary to store the minimax tree
     minimax_tree = {}

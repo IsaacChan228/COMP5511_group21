@@ -85,21 +85,21 @@ def evaluation(game_board, side):
 
     # Calculate score based on the total array
     # 4-piece: Winning move
-    score += total_array[0] * weight.winning_move_4p
+    if total_array[0] > 0: score += weight.winning_move_4p
     # 3-piece: 1 move away from winning
-    score += total_array[1] * weight.winning_move_3p
+    if total_array[1] > 0: score += weight.winning_move_3p
     # 2-piece: 2 moves away from winning
-    score += total_array[2] * weight.winning_move_2p
+    if total_array[2] > 0: score += weight.winning_move_2p
     # 3 opponent piece: 1 move away from losing
-    score += total_array[3] * weight.losing_move_3p
+    if total_array[3] > 0: score += weight.losing_move_3p
 
     # if the move can achieve multiple winning combinations,
     # provide a bonus score
     # No bonus score if opponent achieve 
     # multiple winning combinations, as it means losing
-    if total_array[0] > 1: score += weight.m_winning_move_4p
-    if total_array[1] > 1: score += weight.m_winning_move_3p
-    if total_array[2] > 1: score += weight.m_winning_move_2p
+    if total_array[0] > 1: score += total_array[0] * weight.m_winning_move_4p
+    if total_array[1] > 1: score += total_array[1] * weight.m_winning_move_3p
+    if total_array[2] > 1: score += total_array[2] * weight.m_winning_move_2p
 
     if DEBUG_2:
         print(f"Score for side {side}: {score}")
