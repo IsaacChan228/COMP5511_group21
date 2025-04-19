@@ -109,6 +109,7 @@ button {
     background-color: green;
 }
 
+/* Style for the score overlay */
 .score-overlay {
     font-size: 14px;
     font-weight: bold;
@@ -116,4 +117,5 @@ button {
     text-align: center;
     line-height: 50px; /* Vertically center the text */
     pointer-events: none; /* Make the overlay non-interactive */
+    user-select: none; /* Prevent text selection */
 }

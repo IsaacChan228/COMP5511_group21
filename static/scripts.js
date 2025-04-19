@@ -216,8 +216,23 @@ document.getElementById('minimax-button').addEventListener('click', () => {
         console.log(data.message); // Log the response from the backend
         console.log('Minimax scores:', data.scores); // Log the scores
 
-        // Place the scores in the corresponding cells
-        placeScoresInCells(data.scores);
+        const stateResultDiv = document.getElementById('state-result');
+        const resultDiv = document.getElementById('minimax-result');
+
+        if (data.scores.length === 0) {
+            // If scores are empty, display the error message
+            stateResultDiv.textContent = data.message;
+            stateResultDiv.style.display = 'block'; // Ensure the div is visible
+            resultDiv.style.display = 'none'; // Hide the minimax-result div
+        } else {
+            // Otherwise, display the scores
+            resultDiv.textContent = `Scores for each column: ${data.scores.join(', ')}`;
+            resultDiv.style.display = 'block'; // Ensure the div is visible
+            stateResultDiv.style.display = 'none'; // Hide the state-result div
+
+            // Place the scores in the corresponding cells
+            placeScoresInCells(data.scores);
+        }
     })
     .catch(error => {
         console.error('Error calculating minimax:', error);
