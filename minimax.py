@@ -75,7 +75,7 @@ def evaluation(game_board, side):
 
 
     # Initialize total array to store total counts of 3-piece, 2-piece, etc.
-    total_array = [0, 0, 0, 0]
+    total_array = [0, 0, 0, 0, 0, 0]
 
     # Add counts from horizontal, vertical, and diagonal weights
     total_array = add_arrays(total_array, h_array)
@@ -94,12 +94,15 @@ def evaluation(game_board, side):
     if total_array[3] > 0: score += weight.losing_move_3p
 
     # if the move can achieve multiple winning combinations,
-    # provide a bonus score
-    # No bonus score if opponent achieve 
-    # multiple winning combinations, as it means losing
+    # provide a bonus score, vice versa
     if total_array[0] > 1: score += total_array[0] * weight.m_winning_move_4p
     if total_array[1] > 1: score += total_array[1] * weight.m_winning_move_3p
     if total_array[2] > 1: score += total_array[2] * weight.m_winning_move_2p
+    if total_array[3] > 1: score += total_array[3] * weight.m_losing_move_3p
+
+    # if the player has 2-sided 2-piece, add a bonus score, vice versa
+    score += total_array[4] * weight.m_2sided_2pp
+    score += total_array[5] * weight.m_2sided_2op
 
     if DEBUG_2:
         print(f"Score for side {side}: {score}")
@@ -142,7 +145,7 @@ def add_arrays(arr1, arr2):
 def horizontal_weight(game_board, side):
     rows = len(game_board)
     cols = len(game_board[0])
-    total_array = [0, 0, 0, 0]
+    total_array = [0, 0, 0, 0, 0, 0]
 
     for row in range(rows):
         # minus 3 to ensure the calculation is within the board limits
@@ -158,7 +161,7 @@ def horizontal_weight(game_board, side):
 def vertical_weight(game_board, side):
     rows = len(game_board)
     cols = len(game_board[0])
-    total_array = [0, 0, 0, 0]
+    total_array = [0, 0, 0, 0, 0, 0]
 
     for col in range(cols):
         # minus 3 to ensure the calculation is within the board limits
@@ -174,7 +177,7 @@ def vertical_weight(game_board, side):
 def diagonal_weight_l(game_board, side):
     rows = len(game_board)
     cols = len(game_board[0])
-    total_array = [0, 0, 0, 0]
+    total_array = [0, 0, 0, 0, 0, 0]
 
     # minus 3 to ensure the calculation is within the board limits
     for row in range(rows - 3):
@@ -190,7 +193,7 @@ def diagonal_weight_l(game_board, side):
 def diagonal_weight_r(game_board, side):
     rows = len(game_board)
     cols = len(game_board[0])
-    total_array = [0, 0, 0, 0]
+    total_array = [0, 0, 0, 0, 0, 0]
 
     # minus 3 to ensure the calculation is within the board limits
     for row in range(3, rows):
@@ -212,8 +215,8 @@ def window_calculation(window, side):
     empty_spaces = window.count(0)
 
     # Initialize the array to store the number of match cases
-    # [4-piece, 3-piece, 2-piece, opponent 3-piece]
-    result = [0, 0, 0, 0]  
+    # [4-piece, 3-piece, 2-piece, opponent 3-piece, 2-sided 2-piece, 2-sided opponent 2-piece]
+    result = [0, 0, 0, 0, 0, 0]  
 
     # 4 piece in a row: Winning move
     if player_pieces == 4: 
@@ -230,6 +233,15 @@ def window_calculation(window, side):
     # 3 oppenent piece in a row & 1 empty cell: 1 move away from losing
     elif opponent_pieces == 3 and empty_spaces == 1: 
         result[3] += 1
+
+    # special case: a window with 2-sided 2-piece
+    # Better move than simple 2 side
+    elif window == [0, side, side, 0]:
+        result[4] += 1
+
+    # special case: a window with 2-sided 2-opponent piece
+    elif window == [0, opponent, opponent, 0]:
+        result[5] += 1
 
     return result
 
