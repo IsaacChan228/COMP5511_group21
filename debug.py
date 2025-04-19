@@ -8,3 +8,6 @@ DEBUG_1 = False
 
 # DEBUG_2 is for debugging the minimax algorithm
 DEBUG_2 = False
+
+# DEBUG_3 is for disable alpha-beta pruning
+DEBUG_3 = False
