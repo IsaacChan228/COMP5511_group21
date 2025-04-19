@@ -42,7 +42,7 @@ document.querySelectorAll('.cell').forEach(cell => {
         .then(response => response.json())
         .then(data => {
             console.log(data.message); // Log the response from the backend
-            updateGameBoard();
+            updateGameBoard(); // Refresh the game board
         })
         .catch(error => {
             console.error('Error:', error);
@@ -53,6 +53,7 @@ document.querySelectorAll('.cell').forEach(cell => {
 
 // When "Invert State" button is clicked, send a request to verify the current game state
 document.getElementById('invert-state-button').addEventListener('click', () => {
+    clearScoresFromCells(); // Clear scores
     fetch('/invert-state', {
         method: 'POST',
         headers: {
@@ -73,6 +74,7 @@ document.getElementById('invert-state-button').addEventListener('click', () => {
 
 // When "Verify State" button is clicked, send a request to verify the current game state
 document.getElementById('verify-state-button').addEventListener('click', () => {
+    clearScoresFromCells(); // Clear scores
     fetch('/verify-state', {
         method: 'POST',
         headers: {
@@ -84,11 +86,11 @@ document.getElementById('verify-state-button').addEventListener('click', () => {
         console.log(data.message); // Log the response from the backend
 
         // Display the result in the state-result div
-        const resultDiv = document.getElementById('state-result');
+        const stateResultDiv = document.getElementById('state-result');
         const minimaxDiv = document.getElementById('minimax-result');
 
-        resultDiv.textContent = data.message; // Set the result message
-        resultDiv.style.display = 'block'; // Ensure the div is visible
+        stateResultDiv.textContent = data.message; // Set the result message
+        stateResultDiv.style.display = 'block'; // Ensure the div is visible
         minimaxDiv.style.display = 'none'; // Hide the minimax-result div
     })
     .catch(error => {
@@ -99,6 +101,7 @@ document.getElementById('verify-state-button').addEventListener('click', () => {
 
 // When "Clear Message" button is clicked, clear both state-result and minimax-result messages
 document.getElementById('clear-message-button').addEventListener('click', () => {
+    clearScoresFromCells(); // Clear scores
     const stateResultDiv = document.getElementById('state-result');
     const minimaxResultDiv = document.getElementById('minimax-result');
 
@@ -112,6 +115,7 @@ document.getElementById('clear-message-button').addEventListener('click', () => 
 
 // When "Reset Game Board" button is clicked, send a request to reset the game board
 document.getElementById('reset-board-button').addEventListener('click', () => {
+    clearScoresFromCells(); // Clear scores
     fetch('/reset-board', {
         method: 'POST',
         headers: {
@@ -200,6 +204,7 @@ function updateGameBoardCells(gameBoard) {
 
 // When "Minimax" button is clicked, calculate the score for each column
 document.getElementById('minimax-button').addEventListener('click', () => {
+    clearScoresFromCells(); // Clear scores
     fetch('/minimax', {
         method: 'POST',
         headers: {
@@ -211,21 +216,63 @@ document.getElementById('minimax-button').addEventListener('click', () => {
         console.log(data.message); // Log the response from the backend
         console.log('Minimax scores:', data.scores); // Log the scores
 
-        // Display the result in the minimax-result div
-        const resultDiv = document.getElementById('minimax-result');
-        const stateDiv = document.getElementById('state-result');
-
-        if (data.scores.length === 0) {
-            // If scores are empty, display the error message
-            resultDiv.textContent = data.message;
-        } else {
-            // Otherwise, display the scores
-            resultDiv.textContent = `Scores for each column: ${data.scores.join(', ')}`;
-        }
-        resultDiv.style.display = 'block'; // Ensure the div is visible
-        stateDiv.style.display = 'none'; // Hide the state-result div
+        // Place the scores in the corresponding cells
+        placeScoresInCells(data.scores);
     })
     .catch(error => {
         console.error('Error calculating minimax:', error);
     });
 });
+
+
+// Function to place scores on top of the lowest unoccupied cell (white cell)
+function placeScoresInCells(scores) {
+    const rows = 6; // Number of rows in the game board
+    const cols = 7; // Number of columns in the game board
+
+    for (let col = 0; col < cols; col++) {
+        const score = scores[col];
+
+        // Skip if the score is "NA"
+        if (score === "NA") continue;
+
+        // Find the lowest unoccupied cell in the column
+        for (let row = rows - 1; row >= 0; row--) {
+            const cell = document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`);
+            if (cell && !cell.classList.contains('red') && !cell.classList.contains('green')) {
+                // Create a non-interactive overlay for the score
+                const scoreOverlay = document.createElement('div');
+                scoreOverlay.textContent = score; // Set the score text
+                scoreOverlay.classList.add('score-overlay'); // Add a class for styling
+                scoreOverlay.style.pointerEvents = 'none'; // Make it non-interactive
+
+                // Position the overlay on top of the cell
+                cell.style.position = 'relative'; // Ensure the cell is positioned relative
+                scoreOverlay.style.position = 'absolute';
+                scoreOverlay.style.top = '0';
+                scoreOverlay.style.left = '0';
+                scoreOverlay.style.width = '100%';
+                scoreOverlay.style.height = '100%';
+                scoreOverlay.style.display = 'flex';
+                scoreOverlay.style.justifyContent = 'center';
+                scoreOverlay.style.alignItems = 'center';
+                scoreOverlay.style.color = 'blue'; // Set the text color
+                scoreOverlay.style.fontWeight = 'bold';
+
+                // Append the overlay to the cell
+                cell.appendChild(scoreOverlay);
+                break;
+            }
+        }
+    }
+}
+
+// Function to clear scores from all cells
+function clearScoresFromCells() {
+    document.querySelectorAll('.cell').forEach(cell => {
+        const scoreOverlay = cell.querySelector('.score-overlay');
+        if (scoreOverlay) {
+            scoreOverlay.remove(); // Remove the score overlay
+        }
+    });
+}

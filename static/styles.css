@@ -108,3 +108,12 @@ button {
 .next-move.green {
     background-color: green;
 }
+
+.score-overlay {
+    font-size: 14px;
+    font-weight: bold;
+    color: blue; /* Text color for scores */
+    text-align: center;
+    line-height: 50px; /* Vertically center the text */
+    pointer-events: none; /* Make the overlay non-interactive */
+}
