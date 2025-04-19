@@ -1,4 +1,4 @@
-from debug import DEBUG_2
+from debug import DEBUG_2, DEBUG_3
 import weight
 import math
 
@@ -344,26 +344,30 @@ def minimax(board, depth, alpha, beta, maximizing_player, side, opponent, minima
 
             # Ensure the subtree is initialized
             if subtree_key not in minimax_tree[current_key]["children"]:
-                minimax_tree[current_key]["children"][subtree_key] = {"score": None, "children": {}}
+                minimax_tree[current_key]["children"][subtree_key] = {"score": None, "alpha": None, "beta": None, "children": {}}
 
             eval = minimax(next_board, depth - 1, alpha, beta, False, side, opponent, minimax_tree[current_key]["children"], current_depth + 1, col)
 
             if DEBUG_2: print(f"Evaluating column {col}, depth {current_depth}, score {eval}, max_score {max_eval}, alpha {alpha}, beta {beta}")
 
             max_eval = max(max_eval, eval)
-            alpha = max(alpha, eval)
+            alpha = max(alpha, max_eval)
 
-            # Record the score of the node that triggered pruning
+            # Record the score of the node before pruning
             minimax_tree[current_key]["children"][subtree_key]["score"] = eval
+            minimax_tree[current_key]["children"][subtree_key]["alpha"] = alpha
+            minimax_tree[current_key]["children"][subtree_key]["beta"] = beta
 
-            if beta <= alpha:
-                if DEBUG_2: print(f"Pruning at column {col}, depth {current_depth}")
+            if DEBUG_3 == False:
+                if beta <= alpha:
+                    if DEBUG_2: print(f"Pruning at column {col}, depth {current_depth}")
 
-                # Mark remaining nodes as "x"
-                for remaining_col in valid_columns[valid_columns.index(col) + 1:]:
-                    pruned_key = f"depth_{current_depth + 1}_col_{remaining_col}"
-                    minimax_tree[current_key]["children"][pruned_key] = {"score": "x", "children": {}}
-                break
+                    # Mark remaining nodes as "x"
+                    for remaining_col in valid_columns[valid_columns.index(col) + 1:]:
+                        pruned_key = f"depth_{current_depth + 1}_col_{remaining_col}"
+                        minimax_tree[current_key]["children"][pruned_key] = {"score": "x", "children": {}}
+                    
+                    break
 
         minimax_tree[current_key]["score"] = max_eval
         return max_eval
@@ -376,26 +380,30 @@ def minimax(board, depth, alpha, beta, maximizing_player, side, opponent, minima
 
             # Ensure the subtree is initialized
             if subtree_key not in minimax_tree[current_key]["children"]:
-                minimax_tree[current_key]["children"][subtree_key] = {"score": None, "children": {}}
+                minimax_tree[current_key]["children"][subtree_key] = {"score": None, "alpha": None, "beta": None,  "children": {}}
 
             eval = minimax(next_board, depth - 1, alpha, beta, True, side, opponent, minimax_tree[current_key]["children"], current_depth + 1, col)
             
             if DEBUG_2: print(f"Evaluating column {col}, depth {current_depth}, score {eval}, min_score {min_eval}, alpha {alpha}, beta {beta}")
             
             min_eval = min(min_eval, eval)
-            beta = min(beta, eval)
+            beta = min(beta, min_eval) 
 
             # Record the score of the node that triggered pruning
             minimax_tree[current_key]["children"][subtree_key]["score"] = eval
+            minimax_tree[current_key]["children"][subtree_key]["alpha"] = alpha
+            minimax_tree[current_key]["children"][subtree_key]["beta"] = beta
 
-            if beta <= alpha:
-                if DEBUG_2: print(f"Pruning at column {col}, depth {current_depth}")
+            if DEBUG_3 == False:
+                if beta <= alpha:
+                    if DEBUG_2: print(f"Pruning at column {col}, depth {current_depth}")
 
-                # Mark remaining nodes as "x"
-                for remaining_col in valid_columns[valid_columns.index(col) + 1:]:
-                    pruned_key = f"depth_{current_depth + 1}_col_{remaining_col}"
-                    minimax_tree[current_key]["children"][pruned_key] = {"score": "x", "children": {}}
-                break
+                    # Mark remaining nodes as "x"
+                    for remaining_col in valid_columns[valid_columns.index(col) + 1:]:
+                        pruned_key = f"depth_{current_depth + 1}_col_{remaining_col}"
+                        minimax_tree[current_key]["children"][pruned_key] = {"score": "x", "children": {}}
+                    
+                    break
 
         minimax_tree[current_key]["score"] = min_eval
         return min_eval
