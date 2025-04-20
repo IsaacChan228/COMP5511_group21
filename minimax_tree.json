@@ -1,30 +1,2025 @@
 {
     "depth_0_col_0": {
-        "score": -7389,
-        "children": {}
+        "score": 6617,
+        "children": {
+            "depth_1_col_0": {
+                "score": 7117,
+                "alpha": -Infinity,
+                "beta": 7117,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": -4386,
+                        "alpha": -4386,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 4114,
+                        "alpha": 4114,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 7117,
+                        "alpha": 7117,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": -881,
+                        "alpha": 7117,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": -4883,
+                        "alpha": 7117,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": -3386,
+                        "alpha": 7117,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": -4386,
+                        "alpha": 7117,
+                        "beta": Infinity,
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_1": {
+                "score": 6617,
+                "alpha": -Infinity,
+                "beta": 6617,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 3614,
+                        "alpha": 3614,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 3114,
+                        "alpha": 3614,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 6617,
+                        "alpha": 6617,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": -1381,
+                        "alpha": 6617,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": -4883,
+                        "alpha": 6617,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": -3386,
+                        "alpha": 6617,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": -4386,
+                        "alpha": 6617,
+                        "beta": 7117,
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_2": {
+                "score": "win",
+                "alpha": -Infinity,
+                "beta": 6617,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": -17386,
+                        "alpha": -17386,
+                        "beta": 6617,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": -17386,
+                        "alpha": -17386,
+                        "beta": 6617,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": "win",
+                        "alpha": Infinity,
+                        "beta": 6617,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_3": {
+                "score": 14617,
+                "alpha": -Infinity,
+                "beta": 6617,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 3414,
+                        "alpha": 3414,
+                        "beta": 6617,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 3414,
+                        "alpha": 3414,
+                        "beta": 6617,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 14617,
+                        "alpha": 14617,
+                        "beta": 6617,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_4": {
+                "score": 15117,
+                "alpha": -Infinity,
+                "beta": 6617,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 3614,
+                        "alpha": 3614,
+                        "beta": 6617,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 4114,
+                        "alpha": 4114,
+                        "beta": 6617,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 15117,
+                        "alpha": 15117,
+                        "beta": 6617,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_5": {
+                "score": 15117,
+                "alpha": -Infinity,
+                "beta": 6617,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 3614,
+                        "alpha": 3614,
+                        "beta": 6617,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 4114,
+                        "alpha": 4114,
+                        "beta": 6617,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 15117,
+                        "alpha": 15117,
+                        "beta": 6617,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_6": {
+                "score": 15117,
+                "alpha": -Infinity,
+                "beta": 6617,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 3614,
+                        "alpha": 3614,
+                        "beta": 6617,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 4114,
+                        "alpha": 4114,
+                        "beta": 6617,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 15117,
+                        "alpha": 15117,
+                        "beta": 6617,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            }
+        }
     },
     "depth_0_col_1": {
-        "score": -6389,
-        "children": {}
+        "score": 2617,
+        "children": {
+            "depth_1_col_0": {
+                "score": 15614,
+                "alpha": -Infinity,
+                "beta": 15614,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 3614,
+                        "alpha": 3614,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 15614,
+                        "alpha": 15614,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 15117,
+                        "alpha": 15614,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": 7119,
+                        "alpha": 15614,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": 3617,
+                        "alpha": 15614,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": 5114,
+                        "alpha": 15614,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": 4114,
+                        "alpha": 15614,
+                        "beta": Infinity,
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_1": {
+                "score": 2617,
+                "alpha": -Infinity,
+                "beta": 2617,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": -4886,
+                        "alpha": -4886,
+                        "beta": 15614,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": -4886,
+                        "alpha": -4886,
+                        "beta": 15614,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 2617,
+                        "alpha": 2617,
+                        "beta": 15614,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": -1381,
+                        "alpha": 2617,
+                        "beta": 15614,
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": -5383,
+                        "alpha": 2617,
+                        "beta": 15614,
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": -3886,
+                        "alpha": 2617,
+                        "beta": 15614,
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": -4886,
+                        "alpha": 2617,
+                        "beta": 15614,
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_2": {
+                "score": "win",
+                "alpha": -Infinity,
+                "beta": 2617,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": -17386,
+                        "alpha": -17386,
+                        "beta": 2617,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": -9386,
+                        "alpha": -9386,
+                        "beta": 2617,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": "win",
+                        "alpha": Infinity,
+                        "beta": 2617,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_3": {
+                "score": 3414,
+                "alpha": -Infinity,
+                "beta": 2617,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 3414,
+                        "alpha": 3414,
+                        "beta": 2617,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_4": {
+                "score": 4114,
+                "alpha": -Infinity,
+                "beta": 2617,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 4114,
+                        "alpha": 4114,
+                        "beta": 2617,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_5": {
+                "score": 4114,
+                "alpha": -Infinity,
+                "beta": 2617,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 4114,
+                        "alpha": 4114,
+                        "beta": 2617,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_6": {
+                "score": 4114,
+                "alpha": -Infinity,
+                "beta": 2617,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 4114,
+                        "alpha": 4114,
+                        "beta": 2617,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            }
+        }
     },
     "depth_0_col_2": {
-        "score": -6386,
-        "children": {}
+        "score": 13122,
+        "children": {
+            "depth_1_col_0": {
+                "score": "win",
+                "alpha": -Infinity,
+                "beta": Infinity,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 14617,
+                        "alpha": 14617,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 15117,
+                        "alpha": 15117,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": "win",
+                        "alpha": Infinity,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_1": {
+                "score": "win",
+                "alpha": -Infinity,
+                "beta": Infinity,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 6617,
+                        "alpha": 6617,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": "win",
+                        "alpha": Infinity,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_2": {
+                "score": 13122,
+                "alpha": -Infinity,
+                "beta": 13122,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 10617,
+                        "alpha": 10617,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 11117,
+                        "alpha": 11117,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 11120,
+                        "alpha": 11120,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": 13122,
+                        "alpha": 13122,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": 10120,
+                        "alpha": 13122,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": 11617,
+                        "alpha": 13122,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": 10617,
+                        "alpha": 13122,
+                        "beta": Infinity,
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_3": {
+                "score": 14617,
+                "alpha": -Infinity,
+                "beta": 13122,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 14617,
+                        "alpha": 14617,
+                        "beta": 13122,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_4": {
+                "score": 15117,
+                "alpha": -Infinity,
+                "beta": 13122,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 15117,
+                        "alpha": 15117,
+                        "beta": 13122,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_5": {
+                "score": 15117,
+                "alpha": -Infinity,
+                "beta": 13122,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 15117,
+                        "alpha": 15117,
+                        "beta": 13122,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_6": {
+                "score": 15117,
+                "alpha": -Infinity,
+                "beta": 13122,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 15117,
+                        "alpha": 15117,
+                        "beta": 13122,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            }
+        }
     },
     "depth_0_col_3": {
-        "score": -5884,
-        "children": {}
+        "score": 10122,
+        "children": {
+            "depth_1_col_0": {
+                "score": 18122,
+                "alpha": -Infinity,
+                "beta": 18122,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 6619,
+                        "alpha": 6619,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 7119,
+                        "alpha": 7119,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 18122,
+                        "alpha": 18122,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": 15124,
+                        "alpha": 18122,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": 6622,
+                        "alpha": 18122,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": 18119,
+                        "alpha": 18122,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": 14119,
+                        "alpha": 18122,
+                        "beta": Infinity,
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_1": {
+                "score": 10122,
+                "alpha": -Infinity,
+                "beta": 10122,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": -1381,
+                        "alpha": -1381,
+                        "beta": 18122,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 6619,
+                        "alpha": 6619,
+                        "beta": 18122,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 10122,
+                        "alpha": 10122,
+                        "beta": 18122,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": 7124,
+                        "alpha": 10122,
+                        "beta": 18122,
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": -1378,
+                        "alpha": 10122,
+                        "beta": 18122,
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": 10119,
+                        "alpha": 10122,
+                        "beta": 18122,
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": 6119,
+                        "alpha": 10122,
+                        "beta": 18122,
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_2": {
+                "score": "win",
+                "alpha": -Infinity,
+                "beta": 10122,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": -14381,
+                        "alpha": -14381,
+                        "beta": 10122,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": -13881,
+                        "alpha": -13881,
+                        "beta": 10122,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": "win",
+                        "alpha": Infinity,
+                        "beta": 10122,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_3": {
+                "score": 17922,
+                "alpha": -Infinity,
+                "beta": 10122,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 6419,
+                        "alpha": 6419,
+                        "beta": 10122,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 6919,
+                        "alpha": 6919,
+                        "beta": 10122,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 17922,
+                        "alpha": 17922,
+                        "beta": 10122,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_4": {
+                "score": 18622,
+                "alpha": -Infinity,
+                "beta": 10122,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 7119,
+                        "alpha": 7119,
+                        "beta": 10122,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 7619,
+                        "alpha": 7619,
+                        "beta": 10122,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 18622,
+                        "alpha": 18622,
+                        "beta": 10122,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_5": {
+                "score": 17622,
+                "alpha": -Infinity,
+                "beta": 10122,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 6119,
+                        "alpha": 6119,
+                        "beta": 10122,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 6619,
+                        "alpha": 6619,
+                        "beta": 10122,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 17622,
+                        "alpha": 17622,
+                        "beta": 10122,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_6": {
+                "score": 18122,
+                "alpha": -Infinity,
+                "beta": 10122,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 6619,
+                        "alpha": 6619,
+                        "beta": 10122,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 7119,
+                        "alpha": 7119,
+                        "beta": 10122,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 18122,
+                        "alpha": 18122,
+                        "beta": 10122,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            }
+        }
     },
     "depth_0_col_4": {
-        "score": -5886,
-        "children": {}
+        "score": 6620,
+        "children": {
+            "depth_1_col_0": {
+                "score": 14620,
+                "alpha": -Infinity,
+                "beta": 14620,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 3117,
+                        "alpha": 3117,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 3617,
+                        "alpha": 3617,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 14620,
+                        "alpha": 14620,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": 6622,
+                        "alpha": 14620,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": 4617,
+                        "alpha": 14620,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": 3617,
+                        "alpha": 14620,
+                        "beta": Infinity,
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_1": {
+                "score": 6620,
+                "alpha": -Infinity,
+                "beta": 6620,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": -4883,
+                        "alpha": -4883,
+                        "beta": 14620,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 3617,
+                        "alpha": 3617,
+                        "beta": 14620,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 6620,
+                        "alpha": 6620,
+                        "beta": 14620,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": -1378,
+                        "alpha": 6620,
+                        "beta": 14620,
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": -3383,
+                        "alpha": 6620,
+                        "beta": 14620,
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": -4383,
+                        "alpha": 6620,
+                        "beta": 14620,
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_2": {
+                "score": "win",
+                "alpha": -Infinity,
+                "beta": 6620,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": -17883,
+                        "alpha": -17883,
+                        "beta": 6620,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": -17383,
+                        "alpha": -17383,
+                        "beta": 6620,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": "win",
+                        "alpha": Infinity,
+                        "beta": 6620,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_3": {
+                "score": 14620,
+                "alpha": -Infinity,
+                "beta": 6620,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 2917,
+                        "alpha": 2917,
+                        "beta": 6620,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 3417,
+                        "alpha": 3417,
+                        "beta": 6620,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 14620,
+                        "alpha": 14620,
+                        "beta": 6620,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_5": {
+                "score": 14620,
+                "alpha": -Infinity,
+                "beta": 6620,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 3117,
+                        "alpha": 3117,
+                        "beta": 6620,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 3617,
+                        "alpha": 3617,
+                        "beta": 6620,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 14620,
+                        "alpha": 14620,
+                        "beta": 6620,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_6": {
+                "score": 14620,
+                "alpha": -Infinity,
+                "beta": 6620,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 3117,
+                        "alpha": 3117,
+                        "beta": 6620,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 3617,
+                        "alpha": 3617,
+                        "beta": 6620,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 14620,
+                        "alpha": 14620,
+                        "beta": 6620,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            }
+        }
     },
     "depth_0_col_5": {
-        "score": -6389,
-        "children": {}
+        "score": 12614,
+        "children": {
+            "depth_1_col_0": {
+                "score": 20614,
+                "alpha": -Infinity,
+                "beta": 20614,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 4614,
+                        "alpha": 4614,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 5114,
+                        "alpha": 5114,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 16117,
+                        "alpha": 16117,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": 18119,
+                        "alpha": 18119,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": 4617,
+                        "alpha": 18119,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": 20614,
+                        "alpha": 20614,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": 12114,
+                        "alpha": 20614,
+                        "beta": Infinity,
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_1": {
+                "score": 12614,
+                "alpha": -Infinity,
+                "beta": 12614,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": -3386,
+                        "alpha": -3386,
+                        "beta": 20614,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 4614,
+                        "alpha": 4614,
+                        "beta": 20614,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 8117,
+                        "alpha": 8117,
+                        "beta": 20614,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": 10119,
+                        "alpha": 10119,
+                        "beta": 20614,
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": -3383,
+                        "alpha": 10119,
+                        "beta": 20614,
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": 12614,
+                        "alpha": 12614,
+                        "beta": 20614,
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": 4114,
+                        "alpha": 12614,
+                        "beta": 20614,
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_2": {
+                "score": "win",
+                "alpha": -Infinity,
+                "beta": 12614,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": -16386,
+                        "alpha": -16386,
+                        "beta": 12614,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": -15886,
+                        "alpha": -15886,
+                        "beta": 12614,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": "win",
+                        "alpha": Infinity,
+                        "beta": 12614,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_3": {
+                "score": 15117,
+                "alpha": -Infinity,
+                "beta": 12614,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 3414,
+                        "alpha": 3414,
+                        "beta": 12614,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 3914,
+                        "alpha": 3914,
+                        "beta": 12614,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 15117,
+                        "alpha": 15117,
+                        "beta": 12614,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_4": {
+                "score": 16117,
+                "alpha": -Infinity,
+                "beta": 12614,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 4614,
+                        "alpha": 4614,
+                        "beta": 12614,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 5114,
+                        "alpha": 5114,
+                        "beta": 12614,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 16117,
+                        "alpha": 16117,
+                        "beta": 12614,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_5": {
+                "score": 16619,
+                "alpha": -Infinity,
+                "beta": 12614,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 3114,
+                        "alpha": 3114,
+                        "beta": 12614,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 3614,
+                        "alpha": 3614,
+                        "beta": 12614,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 11117,
+                        "alpha": 11117,
+                        "beta": 12614,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": 16619,
+                        "alpha": 16619,
+                        "beta": 12614,
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_6": {
+                "score": 15617,
+                "alpha": -Infinity,
+                "beta": 12614,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 4114,
+                        "alpha": 4114,
+                        "beta": 12614,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 4614,
+                        "alpha": 4614,
+                        "beta": 12614,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 15617,
+                        "alpha": 15617,
+                        "beta": 12614,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            }
+        }
     },
     "depth_0_col_6": {
-        "score": "win",
-        "children": {}
+        "score": 7117,
+        "children": {
+            "depth_1_col_0": {
+                "score": 15117,
+                "alpha": -Infinity,
+                "beta": 15117,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 3614,
+                        "alpha": 3614,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 4114,
+                        "alpha": 4114,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 15117,
+                        "alpha": 15117,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": 14119,
+                        "alpha": 15117,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": 3617,
+                        "alpha": 15117,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": 12114,
+                        "alpha": 15117,
+                        "beta": Infinity,
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": 4614,
+                        "alpha": 15117,
+                        "beta": Infinity,
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_1": {
+                "score": 7117,
+                "alpha": -Infinity,
+                "beta": 7117,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": -4386,
+                        "alpha": -4386,
+                        "beta": 15117,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 3614,
+                        "alpha": 3614,
+                        "beta": 15117,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 7117,
+                        "alpha": 7117,
+                        "beta": 15117,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": 6119,
+                        "alpha": 7117,
+                        "beta": 15117,
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": -4383,
+                        "alpha": 7117,
+                        "beta": 15117,
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": 4114,
+                        "alpha": 7117,
+                        "beta": 15117,
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": -3386,
+                        "alpha": 7117,
+                        "beta": 15117,
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_2": {
+                "score": "win",
+                "alpha": -Infinity,
+                "beta": 7117,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": -17386,
+                        "alpha": -17386,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": -16886,
+                        "alpha": -16886,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": "win",
+                        "alpha": Infinity,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_3": {
+                "score": 14617,
+                "alpha": -Infinity,
+                "beta": 7117,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 2914,
+                        "alpha": 2914,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 3414,
+                        "alpha": 3414,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 14617,
+                        "alpha": 14617,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_4": {
+                "score": 15117,
+                "alpha": -Infinity,
+                "beta": 7117,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 3614,
+                        "alpha": 3614,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 4114,
+                        "alpha": 4114,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 15117,
+                        "alpha": 15117,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_5": {
+                "score": 14617,
+                "alpha": -Infinity,
+                "beta": 7117,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 3114,
+                        "alpha": 3114,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 3614,
+                        "alpha": 3614,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 14617,
+                        "alpha": 14617,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            },
+            "depth_1_col_6": {
+                "score": 15117,
+                "alpha": -Infinity,
+                "beta": 7117,
+                "children": {
+                    "depth_2_col_0": {
+                        "score": 3614,
+                        "alpha": 3614,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_1": {
+                        "score": 4114,
+                        "alpha": 4114,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_2": {
+                        "score": 15117,
+                        "alpha": 15117,
+                        "beta": 7117,
+                        "children": {}
+                    },
+                    "depth_2_col_3": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_4": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_5": {
+                        "score": "x",
+                        "children": {}
+                    },
+                    "depth_2_col_6": {
+                        "score": "x",
+                        "children": {}
+                    }
+                }
+            }
+        }
     }
 }
