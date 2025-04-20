@@ -30,11 +30,6 @@ losing_move_3p = -8000
 
 ### multiple winning pattern bonus ###
 
-# 2 or more 4-piece: Winning move
-# Multiple 4-piece-in-a-row, still guarantees a win
-# single 4-piece-in-a-row already guarantees a win, so no extra bonus
-m_winning_move_4p = 0
-
 # 2 or more 3-piece: 1 move away from winning
 # Multiple 3-piece-in-a-row, very close to winning
 # This do not check if the multiple 3-piece-in-a-row two-ended, which is a winning move

@@ -95,7 +95,6 @@ def evaluation(game_board, side):
 
     # if the move can achieve multiple winning combinations,
     # provide a bonus score, vice versa
-    if total_array[0] > 1: score += total_array[0] * weight.m_winning_move_4p
     if total_array[1] > 1: score += total_array[1] * weight.m_winning_move_3p
     if total_array[2] > 1: score += total_array[2] * weight.m_winning_move_2p
     if total_array[3] > 1: score += total_array[3] * weight.m_losing_move_3p
