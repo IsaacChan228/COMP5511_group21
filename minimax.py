@@ -127,9 +127,9 @@ def center_score(game_board, side):
             score += weight.center_col_merit
 
         # Check adjacent columns
-        elif center_col - 1 >= 0 and game_board[row][center_col - 1] == side:
+        if center_col - 1 >= 0 and game_board[row][center_col - 1] == side:
             score += weight.adj_col_merit
-        elif center_col + 1 < cols and game_board[row][center_col + 1] == side:
+        if center_col + 1 < cols and game_board[row][center_col + 1] == side:
             score += weight.adj_col_merit
 
     return score
